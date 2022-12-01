@@ -1,13 +1,14 @@
 path+=$HOME/.scripts
 path+=$HOME/.cargo/bin
 path+=$HOME/.local/bin
+path+=$HOME/.npm/global
 path+=.
 export PATH
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
 # ZSH_THEME (xiong-chamiov-plus mod)
-PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;30m%}@%{\e[0m%}%{\e[0;36m%}%m%{\e[0;34m%}%B]%b%{\e[0m%} - %b%{\e[0;34m%}%B[%b%{\e[1;37m%}%~%{\e[0;34m%}%B]%b%{\e[0m%} - %{\e[0;34m%}%B[%b%{\e[0;33m%}'%D{"%H:%M"}%b$'%{\e[0;34m%}%B]%b%{\e[0m%}
+PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;30m%}@%{\e[0m%}%{\e[0;36m%}%m%{\e[0;34m%}%B]%b%{\e[0m%} - %b%{\e[0;34m%}%B[%b%{\e[1;37m%}%5~%{\e[0;34m%}%B]%b%{\e[0m%} - %{\e[0;34m%}%B[%b%{\e[0;33m%}'%D{"%H:%M"}%b$'%{\e[0;34m%}%B]%b%{\e[0m%}
 %{\e[0;34m%}%B└─%B[%{\e[1;35m%}$%{\e[0;34m%}%B] <$(git_prompt_info)>%{\e[0m%}%b '
 PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '
 
@@ -192,7 +193,7 @@ alias gdev="cd ~/Development/game-dev"
 alias ldev="cd ~/Development/low-dev"
 alias latex-cv="cd ~/Documents/LaTeX/curriculum-vitae"
 alias work="cd ~/Development/work/lionintel/php"
-alias books="cd ~/Documents/Books"
+alias books="cd ~/Documents/books"
 alias music="cd ~/Music"
 alias docs="cd ~/Documents"
 alias down="cd ~/Downloads"
