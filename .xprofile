@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Keyboard altgr-intl swap caps esc
+setxkbmap -layout us -variant altgr-intl -option caps:swapescape
+
+# Fast Keyboard
+xset r rate 250 40
+
+# Touchpad sensitivity
+xinput set-prop 'SYNA8004:00 06CB:CD8B Touchpad' 'libinput Accel Speed' +0.15
+xinput set-prop 'SYNA8004:00 06CB:CD8B Touchpad' 'libinput Scrolling Pixel Distance' 10
+
+# Exports
+export EDITOR=nvim
+# export BROWSER=qutebrowser
+export BROWSER=firefox-developer-edition
+export LESS='-R -j8'
+export MANPAGER='less'
+export EXA_COLORS="ur=3;33;40m:uw=3;33;40m:ux=3;33;40m:ue=3;33;40m:gr=3;34;40m:gw=3;34;40m:gx=3;34;40m:tr=3;36;40m:tw=3;36;40m:tx=3;36;40m"
+export LESS_TERMCAP_mb=$'\e[1;34m'
+export LESS_TERMCAP_md=$'\e[1;3;34m'
+export LESS_TERMCAP_us=$'\e[3;4;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_ue=$'\e[0m'
+
+# Startup apps
+picom &
+flameshot &
+nitrogen --restore &
+greenclip daemon &
+dunst &
+numlockx &
+unclutter --timeout 10 &
+lxsession &
+cbatticon --update-interval 60 --low-level 15 --critical-level 3 --hide-notification &
+sxhkd -t 4 &
+playerctld daemon &
+volumeicon &
+udiskie &
+
+while true; do
+	while true; do
+		xsetroot -name "$( date +"%F %R" --date="-1 minutes")"
+		sleep 1m
+	done &
+	# Log stderror to a file
+	dwm 2> ~/.config/dwm/dwm.log
+	# No error logging
+	#dwm >/dev/null 2>&1
+done
