@@ -7,7 +7,7 @@ setxkbmap -layout us -variant altgr-intl -option caps:swapescape
 xset r rate 250 40
 
 # Touchpad sensitivity
-xinput set-prop 'SYNA8004:00 06CB:CD8B Touchpad' 'libinput Accel Speed' +0.15
+xinput set-prop 'SYNA8004:00 06CB:CD8B Touchpad' 'libinput Accel Speed' +0.2
 xinput set-prop 'SYNA8004:00 06CB:CD8B Touchpad' 'libinput Scrolling Pixel Distance' 10
 
 # Exports
