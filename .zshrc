@@ -1,8 +1,8 @@
 path+=$HOME/.scripts
 path+=$HOME/.cargo/bin
 path+=$HOME/.local/bin
-path+=$HOME/.npm/global
-path+=.
+path+=$HOME/.npm/global/bin
+#path+=.
 export PATH
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
@@ -10,8 +10,17 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 # ZSH_THEME (xiong-chamiov-plus mod)
 PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;30m%}@%{\e[0m%}%{\e[0;36m%}%m%{\e[0;34m%}%B]%b%{\e[0m%} - %b%{\e[0;34m%}%B[%b%{\e[1;37m%}%5~%{\e[0;34m%}%B]%b%{\e[0m%} - %{\e[0;34m%}%B[%b%{\e[0;33m%}'%D{"%H:%M"}%b$'%{\e[0;34m%}%B]%b%{\e[0m%}
 %{\e[0;34m%}%B└─%B[%{\e[1;35m%}$%{\e[0;34m%}%B] <$(git_prompt_info)>%{\e[0m%}%b '
+
 PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '
 
+#setopt promptsubst
+#PS1=$'%{\e[2;37m%}${(r:$COLUMNS::    ---    :)}'$PS1
+
+precmd() {
+        precmd() {
+                echo
+        }
+}
 
 CASE_SENSITIVE="false"
 
@@ -23,28 +32,28 @@ zstyle ':omz:update' frequency 7
 HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(
-    # nvm
-    git
-    archlinux
-    zsh-autosuggestions
-    zsh-history-substring-search
-    you-should-use
-    zsh-syntax-highlighting
+        # nvm
+        git
+        archlinux
+        zsh-autosuggestions
+        zsh-history-substring-search
+        you-should-use
+        zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
 
-#  ╭─────────╮
-#  │ Aliases │
-#  ╰─────────╯
+#    ╭─────────╮
+#    │ Aliases │
+#    ╰─────────╯
 # ls
 # alias ls='ls -hF --color=auto'
-# alias lr='ls -R'                    # recursive ls
+# alias lr='ls -R'                                        # recursive ls
 # alias ll='ls -l'
 # alias la='ll -A'
-# alias lx='ll -BX'                   # sort by extension
-# alias lz='ll -rS'                   # sort by size
-# alias lt='ll -rt'                   # sort by date
+# alias lx='ll -BX'                                     # sort by extension
+# alias lz='ll -rS'                                     # sort by size
+# alias lt='ll -rt'                                     # sort by date
 # alias lm='la | bat'
 alias ls='exa --no-icons --group-directories-first'
 alias gls='ls --git-ignore'
@@ -104,6 +113,7 @@ alias imwheel="imwheel -b '45'"
 alias speedtest="speedtest-cli --secure"
 alias grep="grep -i"
 alias rclone="rclone -P"
+alias alacritty="alacritty msg create-window || alacritty"
 
 #Abbreviated
 alias t="trash"
@@ -154,13 +164,13 @@ alias bootgrade="upgrade --combinedupgrade ; sudo reboot"
 alias zzz="systemctl suspend -i"
 
 #Vim file
-  #common
+    #common
 alias vw="vim ~/Development/vimwiki/index.wiki"
 alias readme="vim README.md"
 alias license="vim LICENSE"
 alias pson="vim package.json"
 
-  #conf
+    #conf
 alias paconf="vim /etc/pacman.conf"
 alias zconf="vim ~/.zshrc"
 alias piconf="vim ~/.config/picom/picom.conf"
@@ -170,8 +180,7 @@ alias qutemarks="vim ~/.config/qutebrowser/quickmarks"
 alias qutequick="vim ~/.config/qutebrowser/quickmarks"
 alias xinit="vim ~/.xinitrc"
 alias viminit="vim ~/.config/nvim/init.lua"
-alias vimplug="vim ~/.config/nvim/lua/tony/plugins.lua"
-alias vimopt="vim ~/.config/nvim/lua/tony/options.lua"
+alias vimplug="vim ~/.config/nvim/lua/plugins/init.lua"
 alias lfconf="vim ~/.config/lf/lfrc"
 alias mimeconf="vim ~/.config/mimeapps.list"
 alias apacheconf="vim /etc/httpd/conf/httpd.conf"
@@ -181,7 +190,7 @@ alias php5conf="vim /etc/php56/php.ini"
 alias phpmyadminconf="vim /usr/share/webapps/phpMyAdmin/config.inc.php"
 
 # cd
-  #common
+    #common
 alias setcurrent="/home/tony/.scripts/set-current"
 alias current="cd /home/tony/Development/web-dev/vue/lachina-menu"
 
@@ -198,7 +207,7 @@ alias music="cd ~/Music"
 alias docs="cd ~/Documents"
 alias down="cd ~/Downloads"
 
-  #conf
+    #conf
 alias dwconf="cd ~/.config/dwm"
 alias dmconf="cd ~/.config/dmenu"
 alias vimconf="cd ~/.config/nvim"
@@ -229,9 +238,9 @@ alias cd..='cd ..'
 #Grep pipe
 alias findprocess='ps -Af | grep'
 
-#  ╭───────────╮
-#  │ Functions │
-#  ╰───────────╯
+#    ╭───────────╮
+#    │ Functions │
+#    ╰───────────╯
 # Less pipes
 wtfis() { curl "https://cheat.sh/$1" | less }
 
@@ -239,57 +248,57 @@ ie() { bro "$1" | less }
 
 # Vim pipes
 gd() {
-  if [[ "$1" == "" ]]; then
-    git diff | nvim --noplugin
-  else
-    git diff "$1" | nvim --noplugin
-  fi
+    if [[ "$1" == "" ]]; then
+        git diff | nvim --noplugin
+    else
+        git diff "$1" | nvim --noplugin
+    fi
 }
 
 p() {
-	if [[ "$1" == "" ]]; then
-		ping -c 3 gnu.org
-	else
-		ping -c 3 "$1"
-	fi
+    if [[ "$1" == "" ]]; then
+        ping -c 3 gnu.org
+    else
+        ping -c 3 "$1"
+    fi
 }
 
 webjpeg() {
-  convert $1 -sampling-factor 4:2:0 -strip -quality 80 -interlace JPEG -colorspace sRGB $2
+    convert $1 -sampling-factor 4:2:0 -strip -quality 80 -interlace JPEG -colorspace sRGB $2
 }
 
 webpng() {
-  convert $1 -strip $2
+    convert $1 -strip $2
 }
 
 websvg() {
-  svgo $1 -o $2
+    svgo $1 -o $2
 }
 
 webjpegbatch() {
-  mogrify -sampling-factor 4:2:0 -strip -quality 80 -interlace JPEG -colorspace sRGB -path "$1" *.jpg
+    mogrify -sampling-factor 4:2:0 -strip -quality 80 -interlace JPEG -colorspace sRGB -path "$1" *.jpg
 }
 
 webpngbatch() {
-  mogrify -sampling-factor 4:2:0 -strip -quality 80 -interlace JPEG -colorspace sRGB -path "$1" *.png
+    mogrify -sampling-factor 4:2:0 -strip -quality 80 -interlace JPEG -colorspace sRGB -path "$1" *.png
 }
 
 what-command() {
-	pacman -Qlq $1 | grep /usr/bin/
+    pacman -Qlq $1 | grep /usr/bin/
 }
 
 if [[ -d "/home/tony/intelephense" ]]; then
-	trash /home/tony/intelephense
+    trash /home/tony/intelephense
 fi
 
 if [[ -d "/home/tony/Public" ]]; then
-	trash /home/tony/Public
+    trash /home/tony/Public
 fi
 
 if [[ -d "/home/tony/Templates" ]]; then
-	trash /home/tony/Templates
+    trash /home/tony/Templates
 fi
 
 if [[ -d "/home/tony/Desktop" ]]; then
-	trash /home/tony/Desktop
+    trash /home/tony/Desktop
 fi

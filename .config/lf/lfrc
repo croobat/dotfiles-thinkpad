@@ -4,7 +4,7 @@
 set icons
 set cleaner ~/.config/lf/cleaner
 set previewer ~/.config/lf/preview
-# set colors
+#set colors ~/.config/lf/colors
 
 #  ╭─────────╮
 #  │ Options │

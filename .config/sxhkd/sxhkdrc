@@ -24,6 +24,10 @@ super + slash
 # }}}
 
 # Special keys{{{
+# Terminal
+super + Return
+	alacritty msg create-window || alacritty
+
 # File manager
 super + shift + Return
 	nemo
@@ -43,9 +47,9 @@ control + shift + Escape
 # Web browser
 super + alt + q
 	google-chrome-unstable
-super + alt + e
+super + e
 	firefox-developer-edition
-super + alt + w
+super + w
 	qutebrowser
 
 # Bookmarks
@@ -59,7 +63,7 @@ super + shift + x
 	xkill
 
 # Volume control
-super + shift + v
+super + v
 	pavucontrol
 super + control + shift + v
 	alacritty -e pulsemixer
@@ -172,7 +176,7 @@ super + alt + z
 	whatsapp-nativefier
 
 # super + alt       OCUPADOS            LIBRES
-#               abcdefghiklmnopqstvwyz  hjux
+#               abcdfghiklmnopqstvyz    ehjuwx
 
 # super             OCUPADOS                        LIBRES
-#               bcdefhijklmpqrtz.,-= Fk F2 F3       agnosvwxy
+#               bcdefhijklmpqrtvwxz.,-= Fk F2 F3       agnosy

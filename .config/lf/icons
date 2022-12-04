@@ -3,7 +3,7 @@
 # These examples require Nerd Fonts or a compatible font to be used.
 # See https://www.nerdfonts.com for more information.
 
-# default values from lf (with matching order){{{
+# default values from lf (with matching order)
 # ln      l       # LINK
 # or      l       # ORPHAN
 # tw      t       # STICKY_OTHER_WRITABLE
@@ -18,17 +18,15 @@
 # sg      g       # SETGID
 # ex      x       # EXEC
 # fi      -       # FILE
-# ln      l       # LINK
-# }}}
 
-# file types (with matching order){{{
+# file types (with matching order)
 # ln             # LINK
-ln             # LINK
+ln             # LINK
 or             # ORPHAN
 tw      t       # STICKY_OTHER_WRITABLE
-ow             # OTHER_WRITABLE
+ow             # OTHER_WRITABLE
 st      t       # STICKY
-di             # DIR
+di             # DIR
 pi      p       # FIFO
 so      s       # SOCK
 bd      b       # BLK
@@ -36,28 +34,9 @@ cd      c       # CHR
 su      u       # SETUID
 sg      g       # SETGID
 ex      x       # EXEC
-ex      *       # EXEC
-fi             # FILE
-# }}}
+fi             # FILE
 
-# Text icons{{{
-# ln      [LINK]       # LINK
-# or      [ORPH]       # ORPHAN
-# tw      [TW]       # STICKY_OTHER_WRITABLE
-# ow      [OW]       # OTHER_WRITABLE
-# st      [ST]       # STICKY
-# di      [DIR]       # DIR
-# pi      [FIFO]       # FIFO
-# so      [SOCK]       # SOCK
-# bd      [BLK]       # BLK
-# cd      [CHR]       # CHR
-# su      [SUID]       # SETUID
-# sg      [SGID]       # SETGID
-# ex      [EXEC]       # EXEC
-# fi      [FILE]       # FILE
-# }}}
-
-# file extensions (vim-devicons){{{
+# file extensions (vim-devicons)
 *.styl          
 *.sass          
 *.scss          
@@ -259,103 +238,103 @@ fi             # FILE
 Vagrantfile             
 
 # archives or compressed (extensions from dircolors defaults)
-*.tar   
-*.tgz   
-*.arc   
-*.arj   
-*.taz   
-*.lha   
-*.lz4   
-*.lzh   
-*.lzma  
-*.tlz   
-*.txz   
-*.tzo   
-*.t7z   
-*.zip   
-*.z     
-*.dz    
-*.gz    
-*.lrz   
-*.lz    
-*.lzo   
-*.xz    
-*.zst   
-*.tzst  
-*.bz2   
-*.bz    
-*.tbz   
-*.tbz2  
-*.tz    
-*.deb   
-*.rpm   
-*.jar   
-*.war   
-*.ear   
-*.sar   
-*.rar   
-*.alz   
-*.ace   
-*.zoo   
-*.cpio  
-*.7z    
-*.rz    
-*.cab   
-*.wim   
-*.swm   
-*.dwm   
-*.esd   
+*.tar    
+*.tgz    
+*.arc    
+*.arj    
+*.taz    
+*.lha    
+*.lz4    
+*.lzh    
+*.lzma   
+*.tlz    
+*.txz    
+*.tzo    
+*.t7z    
+*.zip    
+*.z      
+*.dz     
+*.gz     
+*.lrz    
+*.lz     
+*.lzo    
+*.xz     
+*.zst    
+*.tzst   
+*.bz2    
+*.bz     
+*.tbz    
+*.tbz2   
+*.tz     
+*.deb    
+*.rpm    
+*.jar    
+*.war    
+*.ear    
+*.sar    
+*.rar    
+*.alz    
+*.ace    
+*.zoo    
+*.cpio   
+*.7z     
+*.rz     
+*.cab    
+*.wim    
+*.swm    
+*.dwm    
+*.esd    
 
 # image formats (extensions from dircolors defaults)
-*.jpg   
-*.jpeg  
-*.mjpg  
-*.mjpeg 
-*.gif   
-*.bmp   
-*.pbm   
-*.pgm   
-*.ppm   
-*.tga   
-*.xbm   
-*.xpm   
-*.tif   
-*.tiff  
-*.png   
-*.svg   
-*.svgz  
-*.mng   
-*.pcx   
-*.mov   
-*.mpg   
-*.mpeg  
-*.m2v   
-*.webm  
-*.ogm   
-*.mkv   
-*.mp4   
-*.m4v   
-*.mp4v  
-*.vob   
-*.qt    
-*.nuv   
-*.wmv   
-*.asf   
-*.rm    
-*.rmvb  
-*.flc   
-*.avi   
-*.fli   
-*.flv   
-*.gl    
-*.dl    
-*.xcf   
-*.xwd   
-*.yuv   
-*.cgm   
-*.emf   
-*.ogv   
-*.ogx   
+*.jpg    
+*.jpeg   
+*.mjpg   
+*.mjpeg  
+*.gif    
+*.bmp    
+*.pbm    
+*.pgm    
+*.ppm    
+*.tga    
+*.xbm    
+*.xpm    
+*.tif    
+*.tiff   
+*.png    
+*.svg    
+*.svgz   
+*.mng    
+*.pcx    
+*.mov    
+*.mpg    
+*.mpeg   
+*.m2v    
+*.webm   
+*.ogm    
+*.mkv    
+*.mp4    
+*.m4v    
+*.mp4v   
+*.vob    
+*.qt     
+*.nuv    
+*.wmv    
+*.asf    
+*.rm     
+*.rmvb   
+*.flc    
+*.avi    
+*.fli    
+*.flv    
+*.gl     
+*.dl     
+*.xcf    
+*.xwd    
+*.yuv    
+*.cgm    
+*.emf    
+*.ogv    
+*.ogx    
 
 # audio formats (extensions from dircolors defaults)
 *.aac   
@@ -376,334 +355,6 @@ Vagrantfile             
 *.xspf  
 
 # other formats
-*.pdf   
-# }}}
-
-# file extensions (vim-devicons){{{
-# *.styl          [STYL]
-# *.sass          [SASS]
-# *.scss          [SCSS]
-# *.htm           [-HTM]
-# *.html          [HTML]
-# *.slim          [SLIM]
-# *.haml          [HAML]
-# *.ejs           [-EJS]
-# *.css           [-CSS]
-# *.less          [LESS]
-# *.md            [MARK]
-# *.mdx           [-MDX]
-# *.markdown      [MARK]
-# *.rmd           [-RMD]
-# *.json          [JSON]
-# *.webmanifest   [WEBMANIFEST]
-# *.js            [--JS]
-# *.mjs           [-MJS]
-# *.jsx           [-JSX]
-# *.rb            [--RB]
-# *.gemspec       [GEMSPEC]
-# *.rake          [RAKE]
-# *.php           [-PHP]
-# *.py            [--PY]
-# *.pyc           [-PYC]
-# *.pyo           [-PYO]
-# *.pyd           [-PYD]
-# *.coffee        [COFFEE]
-# *.mustache      [MUSTACHE]
-# *.hbs           [-HBS]
-# *.conf          [CONF]
-# *.ini           [-INI]
-# *.yml           [-YML]
-# *.yaml          [YAML]
-# *.toml          [TOML]
-# *.bat           [-BAT]
-# *.mk            [--MK]
-# *.jpg           [-JPG]
-# *.jpeg          [JPEG]
-# *.bmp           [-BMP]
-# *.png           [-PNG]
-# *.webp          [WEBP]
-# *.gif           [-GIF]
-# *.ico           [-ICO]
-# *.twig          [TWIG]
-# *.cpp           [-CPP]
-# *.c++           [---C]
-# *.cxx           [-CXX]
-# *.cc            [--CC]
-# *.cp            [--CP]
-# *.c             [---C]
-# *.cs            [--CS]
-# *.h             [---H]
-# *.hh            [--HH]
-# *.hpp           [-HPP]
-# *.hxx           [-HXX]
-# *.hs            [--HS]
-# *.lhs           [-LHS]
-# *.nix           [-NIX]
-# *.lua           [-LUA]
-# *.java          [JAVA]
-# *.sh            [--SH]
-# *.fish          [FISH]
-# *.bash          [BASH]
-# *.zsh           [-ZSH]
-# *.ksh           [-KSH]
-# *.csh           [-CSH]
-# *.awk           [-AWK]
-# *.ps1           [-PS1]
-# *.ml            [--ML]
-# *.mli           [-MLI]
-# *.diff          [DIFF]
-# *.db            [--DB]
-# *.sql           [-SQL]
-# *.dump          [DUMP]
-# *.clj           [-CLJ]
-# *.cljc          [CLJC]
-# *.cljs          [CLJS]
-# *.edn           [-EDN]
-# *.scala         [SCALA]
-# *.go            [--GO]
-# *.dart          [DART]
-# *.xul           [-XUL]
-# *.sln           [-SLN]
-# *.suo           [-SUO]
-# *.pl            [--PL]
-# *.pm            [--PM]
-# *.t             [---T]
-# *.rss           [-RSS]
-# '*.f#'          [---F]
-# *.fsscript      [FSSCRIPT]
-# *.fsx           [-FSX]
-# *.fs            [--FS]
-# *.fsi           [-FSI]
-# *.rs            [RUST]
-# *.rlib          [RLIB]
-# *.d             [---D]
-# *.erl           [-ERL]
-# *.hrl           [-HRL]
-# *.ex            [--EX]
-# *.exs           [-EXS]
-# *.eex           [-EEX]
-# *.leex          [LEEX]
-# *.heex          [HEEX]
-# *.vim           [-VIM]
-# *.ai            [--AI]
-# *.psd           [-PSD]
-# *.psb           [-PSB]
-# *.ts            [--TS]
-# *.tsx           [-TSX]
-# *.jl            [--JL]
-# *.pp            [--PP]
-# *.vue           [-VUE]
-# *.elm           [-ELM]
-# *.swift         [SWIFT]
-# *.xcplayground  [XCPLAYGROUND]
-# *.tex           [-TEX]
-# *.r             [---R]
-# *.rproj         [RPROJ]
-# *.sol           [-SOL]
-# *.pem           [-PEM]
-#
-# # archives or compressed (extensions from dircolors defaults)
-# *.tar   [-TAR]
-# *.tgz   [-TGZ]
-# *.arc   [-ARC]
-# *.arj   [-ARJ]
-# *.taz   [-TAZ]
-# *.lha   [-LHA]
-# *.lz4   [-LZ4]
-# *.lzh   [-LZH]
-# *.lzma  [LZMA]
-# *.tlz   [-TLZ]
-# *.txz   [-TXZ]
-# *.tzo   [-TZO]
-# *.t7z   [-T7Z]
-# *.zip   [-ZIP]
-# *.z     [---Z]
-# *.dz    [--DZ]
-# *.gz    [--GZ]
-# *.lrz   [-LRZ]
-# *.lz    [--LZ]
-# *.lzo   [-LZO]
-# *.xz    [--XZ]
-# *.zst   [-ZST]
-# *.tzst  [TZST]
-# *.bz2   [-BZ2]
-# *.bz    [--BZ]
-# *.tbz   [-TBZ]
-# *.tbz2  [TBZ2]
-# *.tz    [--TZ]
-# *.deb   [-DEB]
-# *.rpm   [-RPM]
-# *.jar   [-JAR]
-# *.war   [-WAR]
-# *.ear   [-EAR]
-# *.sar   [-SAR]
-# *.rar   [-RAR]
-# *.alz   [-ALZ]
-# *.ace   [-ACE]
-# *.zoo   [-ZOO]
-# *.cpio  [CPIO]
-# *.7z    [--7Z]
-# *.rz    [--RZ]
-# *.cab   [-CAB]
-# *.wim   [-WIM]
-# *.swm   [-SWM]
-# *.dwm   [-DWM]
-# *.esd   [-ESD]
-#
-# # image format[#s (extensions from dircolors defaults
-# *.jpg   [JPEG]
-# *.jpeg  [JPEG]
-# *.mjpg  [MJPG]
-# *.mjpeg [MJPG]
-# *.gif   [-GIF]
-# *.bmp   [-BMP]
-# *.pbm   [-PBM]
-# *.pgm   [-PGM]
-# *.ppm   [-PPM]
-# *.tga   [-TGA]
-# *.xbm   [-XBM]
-# *.xpm   [-XPM]
-# *.tif   [-TIF]
-# *.tiff  [TIFF]
-# *.png   [-PNG]
-# *.svg   [-SVG]
-# *.svgz  [SVGZ]
-# *.mng   [-MNG]
-# *.pcx   [-PCX]
-# *.mov   [-MOV]
-# *.mpg   [-MPG]
-# *.mpeg  [MPEG]
-# *.m2v   [-M2V]
-# *.webm  [WEBM]
-# *.ogm   [-OGM]
-# *.mkv   [-MKV]
-# *.mp4   [-MP4]
-# *.m4v   [-M4V]
-# *.mp4v  [MP4V]
-# *.vob   [-VOB]
-# *.qt    [--QT]
-# *.nuv   [-NUV]
-# *.wmv   [-WMV]
-# *.asf   [-ASF]
-# *.rm    [--RM]
-# *.rmvb  [RMVB]
-# *.flc   [-FLC]
-# *.avi   [-AVI]
-# *.fli   [-FLI]
-# *.flv   [-FLV]
-# *.gl    [--GL]
-# *.dl    [--DL]
-# *.xcf   [-XCF]
-# *.xwd   [-XWD]
-# *.yuv   [-YUV]
-# *.cgm   [-CGM]
-# *.emf   [-EMF]
-# *.ogv   [-OGV]
-# *.ogx   [-OGX]
-#
-# # audio formats (extensions from dircolors defaults)
-# *.aac   [-AAC]
-# *.au    [--AU]
-# *.flac  [FLAC]
-# *.m4a   [-M4A]
-# *.mid   [-MID]
-# *.midi  [MIDI]
-# *.mka   [-MKA]
-# *.mp3   [-MP3]
-# *.mpc   [-MPC]
-# *.ogg   [-OGG]
-# *.ra    [--RA]
-# *.wav   [-WAV]
-# *.oga   [-OGA]
-# *.opus  [OPUS]
-# *.spx   [-SPX]
-# *.xspf  [XSPF]
-#
-# # other formats
-# *.pdf   [-PDF]
-# *.epub  [EPUB]
-# *.mobi  [MOBI]
-# *.docx  [DOCX]
-# *.doc   [-DOC]
-# *.desktop [DESK]
-#
-# # Exceptions{{{
-# # file names (vim-devicons) (case-insensitive not supported in lf)
-# *gruntfile.coffee       
-# *gruntfile.js           
-# *gruntfile.ls           
-# *gulpfile.coffee        
-# *gulpfile.js            
-# *gulpfile.ls            
-# *mix.lock               
-# *dropbox                
-# *.ds_store              
-# *.gitconfig             
-# *.gitignore             
-# *.gitattributes         
-# *.gitlab-ci.yml         
-# *.bashrc                
-# *.zshrc                 
-# *.zshenv                
-# *.zprofile              
-# *.vimrc                 
-# *.gvimrc                
-# *_vimrc                 
-# *_gvimrc                
-# *.bashprofile           
-# *favicon.ico            
-# *license                
-# *node_modules           
-# *react.jsx              
-# *procfile               
-# *dockerfile             
-# *docker-compose.yml     
-# *rakefile               
-# *config.ru              
-# *gemfile                
-# *makefile               
-# *cmakelists.txt         
-# *robots.txt             ﮧ
-#
-# # file names (case-sensitive adaptations)
-# *Gruntfile.coffee       
-# *Gruntfile.js           
-# *Gruntfile.ls           
-# *Gulpfile.coffee        
-# *Gulpfile.js            
-# *Gulpfile.ls            
-# *Dropbox                
-# *.DS_Store              
-# *LICENSE                
-# *React.jsx              
-# *Procfile               
-# *Dockerfile             
-# *Docker-compose.yml     
-# *Rakefile               
-# *Gemfile                
-# *Makefile               
-# *CMakeLists.txt         
-#
-# # file patterns (vim-devicons) (patterns not supported in lf)
-# # .*jquery.*\.js$         
-# # .*angular.*\.js$        
-# # .*backbone.*\.js$       
-# # .*require.*\.js$        
-# # .*materialize.*\.js$    
-# # .*materialize.*\.css$   
-# # .*mootools.*\.js$       
-# # .*vimrc.*               
-# # Vagrantfile$            
-#
-# # file patterns (file name adaptations)
-# *jquery.min.js          
-# *angular.min.js         
-# *backbone.min.js        
-# *require.min.js         
-# *materialize.min.js     
-# *materialize.min.css    
-# *mootools.min.js        
-# *vimrc                  
-# Vagrantfile             
-# # }}}
-# }}}
+*.pdf   
+*.epub  
+*.mobi  
