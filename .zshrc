@@ -113,7 +113,8 @@ alias imwheel="imwheel -b '45'"
 alias speedtest="speedtest-cli --secure"
 alias grep="grep -i"
 alias rclone="rclone -P"
-alias alacritty="alacritty msg create-window || alacritty"
+# alias alacritty="alacritty msg create-window || alacritty"
+alias cbonsai="cbonsai -li -t 0.01 -w 4 -M 5 -L 50"
 
 #Abbreviated
 alias t="trash"
@@ -165,7 +166,7 @@ alias zzz="systemctl suspend -i"
 
 #Vim file
     #common
-alias vw="vim ~/Development/vimwiki/index.wiki"
+alias vw="vim ~/Documents/vimwiki/index.md"
 alias readme="vim README.md"
 alias license="vim LICENSE"
 alias pson="vim package.json"

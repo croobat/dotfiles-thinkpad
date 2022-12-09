@@ -2,7 +2,7 @@ configuration {
   display-drun: "Applications:";
   display-window: "Windows:";
   drun-display-format: "{icon} {name}";
-  font: "Recursive Mono Casual Static Medium 12";
+  font: "Recursive Mono Linear Static Medium 12";
   modi: "window,drun,run,ssh,emoji,clipboard:greenclip print";
   show-icons: false;
   terminal: "alacritty";
