@@ -5,7 +5,8 @@
 ### Tools ###
 # Rofi{{{
 super + r
-	rofi -show drun
+	j4-dmenu-desktop --term=alacritty
+	# rofi -show drun
 # Show windows
 alt + Tab
 	rofi -show window
@@ -54,10 +55,10 @@ super + w
 	qutebrowser
 
 # Bookmarks
-super + b
-	alacritty --title buku -e /home/tony/.scripts/bfind
-super + shift + b
-	/home/tony/.scripts/bukuadd
+# super + b
+# 	alacritty --title buku -e /home/tony/.scripts/bfind
+# super + shift + b
+# 	/home/tony/.scripts/bukuadd
 
 # Kill
 super + shift + x

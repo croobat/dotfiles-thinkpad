@@ -61,6 +61,7 @@ alias tree='ls -T'
 alias lr='ls -R'
 alias ll='ls -l'
 alias la='ll -a'
+alias l='la'
 alias lx='ll --sort=extension'
 alias lz='ll --sort=size'
 alias lt='ll --sort=date'
@@ -191,11 +192,16 @@ alias php5conf="vim /etc/php56/php.ini"
 alias phpmyadminconf="vim /usr/share/webapps/phpMyAdmin/config.inc.php"
 
 # cd
-    #common
+alias ..='cd ..'
 alias setcurrent="/home/tony/.scripts/set-current"
 alias current="cd /home/tony/Development/web-dev/vue/lachina-menu"
 
-alias ..='cd ..'
+alias down="cd ~/Downloads"
+alias docs="cd ~/Documents"
+alias music="cd ~/Music"
+alias scripts="cd ~/.scripts"
+alias books="cd ~/Documents/books"
+
 alias desk="cd /usr/share/applications"
 alias platzi="cd ~/Development/courses/platzi"
 alias wdev="cd ~/Development/web-dev"
@@ -203,12 +209,9 @@ alias gdev="cd ~/Development/game-dev"
 alias ldev="cd ~/Development/low-dev"
 alias latex-cv="cd ~/Documents/LaTeX/curriculum-vitae"
 alias work="cd ~/Development/work/lionintel/php"
-alias books="cd ~/Documents/books"
-alias music="cd ~/Music"
-alias docs="cd ~/Documents"
-alias down="cd ~/Downloads"
 
     #conf
+alias conf="cd ~/.config"
 alias dwconf="cd ~/.config/dwm"
 alias dmconf="cd ~/.config/dmenu"
 alias vimconf="cd ~/.config/nvim"
@@ -303,3 +306,9 @@ fi
 if [[ -d "/home/tony/Desktop" ]]; then
     trash /home/tony/Desktop
 fi
+
+if [[ -d "/home/tony/go" ]]; then
+    trash /home/tony/go
+fi
+
+# pokemon-colorscripts -r

@@ -37,6 +37,7 @@ application/epub=com.github.johnfactotum.Foliate.desktop
 application/epub+zip=com.github.johnfactotum.Foliate.desktop
 application/x-mobipocket-ebook=com.github.johnfactotum.Foliate.desktop
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
+x-scheme-handler/gitkraken=GitKraken.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-531DS1.desktop;userapp-Thunderbird-FQ3MV1.desktop;
