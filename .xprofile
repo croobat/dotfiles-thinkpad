@@ -37,7 +37,7 @@ dunst &
 numlockx &
 unclutter --timeout 10 &
 lxsession &
-cbatticon --update-interval 20 --low-level 15 --critical-level 3 --hide-notification &
+cbatticon --update-interval 20 -l 10 -r 5 --hide-notification &
 sxhkd -t 4 &
 playerctld daemon &
 volumeicon &
