@@ -6,7 +6,9 @@
 # Rofi{{{
 super + r
 	j4-dmenu-desktop --term=alacritty
-	# rofi -show drun
+super + shift + r
+	rofi -show drun
+
 # Show windows
 alt + Tab
 	rofi -show window

@@ -113,12 +113,12 @@ set skip_track_info=false
 set smart_artist_sort=true
 set softvol=false
 set softvol_state=0 0
-set start_view=sorted
+set start_view=playlist
 set status_display_program=
 set stop_after_queue=false
 set time_show_leading_zero=true
 set tree_width_max=0
-set tree_width_percent=33
+set tree_width_percent=10
 set wrap_search=true
 bind browser backspace browser-up
 bind browser i toggle show_hidden

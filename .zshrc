@@ -90,6 +90,16 @@ alias pacinn="sudo pacman -S --needed"
 alias yainn="yay -S --needed"
 alias yainch="yay -S --mflags \"--skipchecksums --skippgpcheck\""
 
+# Git
+alias glgm='git log --stat'
+alias glogm='git log --oneline --decorate --graph'
+alias gslogm="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias glg='git log --stat --no-merges'
+alias glog='git log --oneline --decorate --graph --no-merges'
+alias gslog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all --no-merges"
+alias gdd="git difftool"
+alias git-remove-all-branches='git branch | grep -v "master\|main" | xargs git branch -D'
+
 ## Modified
 alias diff='colordiff'
 alias grep='grep --color=auto'
@@ -116,6 +126,8 @@ alias grep="grep -i"
 alias rclone="rclone -P"
 # alias alacritty="alacritty msg create-window || alacritty"
 alias cbonsai="cbonsai -li -t 0.01 -w 4 -M 5 -L 50"
+alias dbeaver="GTK_THEME=Adwaita:light dbeaver"
+alias easytag="GTK_THEME=Adwaita:light easytag"
 
 #Abbreviated
 alias t="trash"
@@ -125,8 +137,6 @@ alias quteserver="live-server --browser=qutebrowser"
 alias unzip="unzip -d ./zip"
 alias du1='du --max-depth=1'
 alias o="xdg-open"
-alias gdd="git difftool"
-alias gslog="git slog"
 alias getdefault="xdg-mime query default"
 alias setdefault="xdg-mime default"
 alias gettype="xdg-mime query filetype"
@@ -142,7 +152,6 @@ alias td="topydo"
 alias 2048="2048 bluered"
 alias nvm-source="source '$NVM_DIR/nvm.sh' ${NVM_LAZY+'--no-use'}"
 alias dm="dmenu_run"
-alias ofetch="onefetch"
 alias ra="ranger"
 alias b="buku"
 alias maria="mariadb"
@@ -201,6 +210,7 @@ alias docs="cd ~/Documents"
 alias music="cd ~/Music"
 alias scripts="cd ~/.scripts"
 alias books="cd ~/Documents/books"
+alias media="cd /run/media/tony"
 
 alias desk="cd /usr/share/applications"
 alias platzi="cd ~/Development/courses/platzi"
