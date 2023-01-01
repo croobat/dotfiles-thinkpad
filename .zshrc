@@ -207,6 +207,7 @@ alias current="cd /home/tony/Development/web-dev/vue/lachina-menu"
 
 alias down="cd ~/Downloads"
 alias docs="cd ~/Documents"
+alias pics="cd ~/Pictures"
 alias music="cd ~/Music"
 alias scripts="cd ~/.scripts"
 alias books="cd ~/Documents/books"

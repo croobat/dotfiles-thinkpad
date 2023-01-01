@@ -79,7 +79,7 @@ map gs cd ~/.scripts
 map gm cd ~/Videos/Movies
 map gM cd ~/Music
 map gu cd /run/media/tony
-map gb cd ~/Documents/Books
+map gb cd ~/Documents/books
 
 # Faster scrolling
 map <c-j> push 5j
