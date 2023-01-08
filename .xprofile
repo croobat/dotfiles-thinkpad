@@ -5,6 +5,8 @@ setxkbmap -layout us -variant altgr-intl -option caps:swapescape
 
 # Fast Keyboard
 xset r rate 250 40
+# Longer time before screen turn-off
+xset s 1800
 
 # DPI
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
@@ -15,8 +17,8 @@ xinput set-prop 'SYNA8004:00 06CB:CD8B Touchpad' 'libinput Scrolling Pixel Dista
 
 # Exports
 export EDITOR=nvim
-# export BROWSER=qutebrowser
-export BROWSER=firefox-developer-edition
+export BROWSER=qutebrowser
+# export BROWSER=firefox-developer-edition
 export LESS='-R -j8'
 export MANPAGER='less'
 export EXA_COLORS="ur=3;33;40m:uw=3;33;40m:ux=3;33;40m:ue=3;33;40m:gr=3;34;40m:gw=3;34;40m:gx=3;34;40m:tr=3;36;40m:tw=3;36;40m:tx=3;36;40m"
@@ -45,7 +47,7 @@ udiskie &
 
 while true; do
 	while true; do
-		xsetroot -name "$( date +"%F %R" --date="-1 minutes")"
+		xsetroot -name "$( date +"%F %R" )"
 		sleep 1m
 	done &
 	# Log stderror to a file

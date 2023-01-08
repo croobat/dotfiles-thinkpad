@@ -18,9 +18,15 @@ super + F2
 # Show ssh
 super + F3
 	rofi -show ssh
+
 # Clipboard history
 super + c
 	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
+# Rotate screen
+super + s
+	alacritty -e /home/tony/.scripts/rotate-screen
+
 # Show emojis
 super + slash
 	rofi -show emoji

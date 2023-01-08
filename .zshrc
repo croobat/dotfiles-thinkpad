@@ -270,6 +270,14 @@ gd() {
     fi
 }
 
+gdc() {
+    if [[ "$1" == "" ]]; then
+        git diff --cached | nvim --noplugin
+    else
+        git diff --cached "$1" | nvim --noplugin
+    fi
+}
+
 p() {
     if [[ "$1" == "" ]]; then
         ping -c 3 gnu.org
@@ -322,4 +330,4 @@ if [[ -d "/home/tony/go" ]]; then
     trash /home/tony/go
 fi
 
-# pokemon-colorscripts -r
+# pokemon-colorscripts -r --no-title
