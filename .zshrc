@@ -126,7 +126,7 @@ alias grep="grep -i"
 alias rclone="rclone -P"
 # alias alacritty="alacritty msg create-window || alacritty"
 alias cbonsai="cbonsai -li -t 0.01 -w 4 -M 5 -L 50"
-alias dbeaver="GTK_THEME=Adwaita:light dbeaver"
+# alias dbeaver="GTK_THEME=Adwaita:light dbeaver"
 alias easytag="GTK_THEME=Adwaita:light easytag"
 
 #Abbreviated
@@ -209,6 +209,7 @@ alias down="cd ~/Downloads"
 alias docs="cd ~/Documents"
 alias pics="cd ~/Pictures"
 alias music="cd ~/Music"
+alias videos="cd ~/Videos"
 alias scripts="cd ~/.scripts"
 alias books="cd ~/Documents/books"
 alias media="cd /run/media/tony"
@@ -238,11 +239,11 @@ alias playogg='mpv *.ogg'
 alias playmp3='mpv *.mp3'
 
 #video
-alias playavi='vlc *.avi'
-alias playmov='vlc *.mov'
-alias playmp4='vlc *.mp4'
-alias playflv='vlc *.flv'
-alias playmkv='vlc *.mkv'
+alias playavi='mpv *.avi'
+alias playmov='mpv *.mov'
+alias playmp4='mpv *.mp4'
+alias playflv='mpv *.flv'
+alias playmkv='mpv *.mkv'
 
 ## Error tolerant
 alias :q=' exit'
