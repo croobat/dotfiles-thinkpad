@@ -63,10 +63,11 @@ super + w
 	qutebrowser
 
 # Bookmarks
-# super + b
-# 	alacritty --title buku -e /home/tony/.scripts/bfind
+super + b
+	/home/tony/.scripts/bmks
+	# alacritty --title buku -e /home/tony/.scripts/bfind
 # super + shift + b
-# 	/home/tony/.scripts/bukuadd
+	# /home/tony/.scripts/bukuadd
 
 # Kill
 super + shift + x
@@ -136,6 +137,10 @@ super + alt + c
 # Discord
 super + alt + d
 	discord
+
+super + alt + e
+	alacritty
+	# alacritty msg create-window || alacritty
 
 # FreeCAD
 super + alt + f

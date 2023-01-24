@@ -1,4 +1,4 @@
-path+=$HOME/.scripts
+ath+=$HOME/.scripts
 path+=$HOME/.cargo/bin
 path+=$HOME/.local/bin
 path+=$HOME/.npm/global/bin
@@ -13,13 +13,11 @@ PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;30m%}@%{\e[0m%}%{\
 
 PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '
 
-#setopt promptsubst
-#PS1=$'%{\e[2;37m%}${(r:$COLUMNS::    ---    :)}'$PS1
-
+# Empty line after each command
 precmd() {
-        precmd() {
-                echo
-        }
+    precmd() {
+        echo
+    }
 }
 
 CASE_SENSITIVE="false"
@@ -32,13 +30,12 @@ zstyle ':omz:update' frequency 7
 HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(
-        # nvm
-        git
-        archlinux
-        zsh-autosuggestions
-        zsh-history-substring-search
-        you-should-use
-        zsh-syntax-highlighting
+    git
+    archlinux
+    zsh-autosuggestions
+    zsh-history-substring-search
+    you-should-use
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -47,14 +44,6 @@ source $ZSH/oh-my-zsh.sh
 #    │ Aliases │
 #    ╰─────────╯
 # ls
-# alias ls='ls -hF --color=auto'
-# alias lr='ls -R'                                        # recursive ls
-# alias ll='ls -l'
-# alias la='ll -A'
-# alias lx='ll -BX'                                     # sort by extension
-# alias lz='ll -rS'                                     # sort by size
-# alias lt='ll -rt'                                     # sort by date
-# alias lm='la | bat'
 alias ls='exa --no-icons --group-directories-first'
 alias gls='ls --git-ignore'
 alias tree='ls -T'
@@ -76,11 +65,8 @@ alias chgrp='chgrp --preserve-root'
 alias chx='chmod --preserve-root u+x'
 
 # Privileged access
-alias scat='sudo cat'
-alias svim='sudo nvim'
 alias reboot='sudo systemctl reboot'
 alias poweroff='sudo systemctl poweroff'
-alias update='sudo pacman -Su'
 alias netctl='sudo netctl'
 alias nethogs='sudo nethogs'
 alias updatedb='sudo updatedb --verbose'
@@ -98,7 +84,7 @@ alias glg='git log --stat --no-merges'
 alias glog='git log --oneline --decorate --graph --no-merges'
 alias gslog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all --no-merges"
 alias gdd="git difftool"
-alias git-remove-all-branches='git branch | grep -v "master\|main" | xargs git branch -D'
+alias git-remove-all-branches='git branch | grep -v "master\|main\|develop\|ARamirez" | xargs git branch -D'
 
 ## Modified
 alias diff='colordiff'
@@ -117,17 +103,17 @@ alias less="bat -f --paging=always"
 alias lf='/home/tony/.config/lf/lfrun'
 alias nsxiv="nsxiv -a -r -s f"
 alias vi="nvim --noplugin"
-alias vim="nvim"
+alias vim="lvim"
+alias vimdiff="nvim --noplugin -d $1 $2"
 alias hist="history | bat"
 alias ssh="TERM=xterm-256color $(which ssh)"
 alias imwheel="imwheel -b '45'"
 alias speedtest="speedtest-cli --secure"
 alias grep="grep -i"
 alias rclone="rclone -P"
-# alias alacritty="alacritty msg create-window || alacritty"
 alias cbonsai="cbonsai -li -t 0.01 -w 4 -M 5 -L 50"
-# alias dbeaver="GTK_THEME=Adwaita:light dbeaver"
 alias easytag="GTK_THEME=Adwaita:light easytag"
+alias md2html="python /home/tony/.local/bin/md2html"
 
 #Abbreviated
 alias t="trash"
@@ -183,6 +169,11 @@ alias pson="vim package.json"
 
     #conf
 alias paconf="vim /etc/pacman.conf"
+alias apacheconf="vim /etc/httpd/conf/httpd.conf"
+alias phpconf="vim /etc/php/php.ini"
+alias php7conf="vim /etc/php74/php.ini"
+alias php5conf="vim /etc/php56/php.ini"
+alias phpmyadminconf="vim /usr/share/webapps/phpMyAdmin/config.inc.php"
 alias zconf="vim ~/.zshrc"
 alias piconf="vim ~/.config/picom/picom.conf"
 alias alaconf="vim ~/.config/alacritty/alacritty.yml"
@@ -190,15 +181,12 @@ alias bindsconf="vim ~/.config/sxhkd/sxhkdrc"
 alias qutemarks="vim ~/.config/qutebrowser/quickmarks"
 alias qutequick="vim ~/.config/qutebrowser/quickmarks"
 alias xinit="vim ~/.xinitrc"
+alias lviminit="vim ~/.config/lvim/config.lua"
+alias lvimplug="vim ~/.config/lvim/lua/tony/plugins.lua"
 alias viminit="vim ~/.config/nvim/init.lua"
 alias vimplug="vim ~/.config/nvim/lua/plugins/init.lua"
 alias lfconf="vim ~/.config/lf/lfrc"
 alias mimeconf="vim ~/.config/mimeapps.list"
-alias apacheconf="vim /etc/httpd/conf/httpd.conf"
-alias phpconf="vim /etc/php/php.ini"
-alias php7conf="vim /etc/php7/php.ini"
-alias php5conf="vim /etc/php56/php.ini"
-alias phpmyadminconf="vim /usr/share/webapps/phpMyAdmin/config.inc.php"
 
 # cd
 alias ..='cd ..'
@@ -227,6 +215,7 @@ alias conf="cd ~/.config"
 alias dwconf="cd ~/.config/dwm"
 alias dmconf="cd ~/.config/dmenu"
 alias vimconf="cd ~/.config/nvim"
+alias lvimconf="cd ~/.config/lvim"
 alias quteconf="cd ~/.config/qutebrowser"
 alias rangerconf="cd ~/.config/ranger"
 alias packerconf="cd ~/.local/share/nvim/site/pack/packer"

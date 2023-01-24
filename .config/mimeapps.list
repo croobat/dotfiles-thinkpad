@@ -39,6 +39,7 @@ application/x-mobipocket-ebook=com.github.johnfactotum.Foliate.desktop
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
 x-scheme-handler/gitkraken=GitKraken.desktop
 inode/directory=nemo.desktop
+x-scheme-handler/figma=figma-linux.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-531DS1.desktop;userapp-Thunderbird-FQ3MV1.desktop;

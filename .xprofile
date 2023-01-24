@@ -16,7 +16,7 @@ xinput set-prop 'SYNA8004:00 06CB:CD8B Touchpad' 'libinput Accel Speed' +0.3
 xinput set-prop 'SYNA8004:00 06CB:CD8B Touchpad' 'libinput Scrolling Pixel Distance' 10
 
 # Exports
-export EDITOR=nvim
+export EDITOR=lvim
 export BROWSER=qutebrowser
 # export BROWSER=firefox-developer-edition
 export LESS='-R -j8'

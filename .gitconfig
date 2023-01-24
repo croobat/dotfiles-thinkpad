@@ -19,6 +19,7 @@
 [alias]
 [safe]
 	directory = /opt/flutter
+	directory = /opt/flutter
 [color]
 	ui = auto
 [pull]
