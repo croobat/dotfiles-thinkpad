@@ -12,8 +12,8 @@ xset s 1800
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
 # Touchpad sensitivity
-xinput set-prop 'SYNA8004:00 06CB:CD8B Touchpad' 'libinput Accel Speed' +0.3
-xinput set-prop 'SYNA8004:00 06CB:CD8B Touchpad' 'libinput Scrolling Pixel Distance' 10
+xinput set-prop 'SYNA8004:00 06CB:CD8B Touchpad' 'libinput Accel Speed' +0.1
+# xinput set-prop 'SYNA8004:00 06CB:CD8B Touchpad' 'libinput Scrolling Pixel Distance' 10
 
 # Exports
 export EDITOR=lvim

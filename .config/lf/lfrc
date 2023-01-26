@@ -2,9 +2,9 @@
 #  │ Setup   │
 #  ╰─────────╯
 set icons
+# set colors ~/.config/lf/colors
 set cleaner ~/.config/lf/cleaner
 set previewer ~/.config/lf/preview
-#set colors ~/.config/lf/colors
 
 #  ╭─────────╮
 #  │ Options │

@@ -8,34 +8,36 @@ export ZSH="$HOME/.oh-my-zsh"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
 # ZSH_THEME (xiong-chamiov-plus mod)
-PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;30m%}@%{\e[0m%}%{\e[0;36m%}%m%{\e[0;34m%}%B]%b%{\e[0m%} - %b%{\e[0;34m%}%B[%b%{\e[1;37m%}%5~%{\e[0;34m%}%B]%b%{\e[0m%} - %{\e[0;34m%}%B[%b%{\e[0;33m%}'%D{"%H:%M"}%b$'%{\e[0;34m%}%B]%b%{\e[0m%}
+export PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;30m%}@%{\e[0m%}%{\e[0;36m%}%m%{\e[0;34m%}%B]%b%{\e[0m%} - %b%{\e[0;34m%}%B[%b%{\e[1;37m%}%5~%{\e[0;34m%}%B]%b%{\e[0m%} - %{\e[0;34m%}%B[%b%{\e[0;33m%}'%D{"%H:%M"}%b$'%{\e[0;34m%}%B]%b%{\e[0m%}
 %{\e[0;34m%}%B└─%B[%{\e[1;35m%}$%{\e[0;34m%}%B] <$(git_prompt_info)>%{\e[0m%}%b '
 
 PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '
 
 # Empty line after each command
 precmd() {
-    precmd() {
-        echo
-    }
+  precmd() {
+    echo
+  }
 }
 
-CASE_SENSITIVE="false"
+export CASE_SENSITIVE="false"
 
-HYPHEN_INSENSITIVE="true"
+export HYPHEN_INSENSITIVE="true"
 
 zstyle ':omz:update' mode auto
 zstyle ':omz:update' frequency 7
 
-HIST_STAMPS="yyyy-mm-dd"
+export HIST_STAMPS="yyyy-mm-dd"
 
-plugins=(
-    git
-    archlinux
-    zsh-autosuggestions
-    zsh-history-substring-search
-    you-should-use
-    zsh-syntax-highlighting
+export plugins=(
+  git
+  archlinux
+  docker
+  docker-compose
+  zsh-autosuggestions
+  zsh-history-substring-search
+  you-should-use
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -104,9 +106,8 @@ alias lf='/home/tony/.config/lf/lfrun'
 alias nsxiv="nsxiv -a -r -s f"
 alias vi="nvim --noplugin"
 alias vim="lvim"
-alias vimdiff="nvim --noplugin -d $1 $2"
 alias hist="history | bat"
-alias ssh="TERM=xterm-256color $(which ssh)"
+alias ssh="TERM=xterm-256color ssh"
 alias imwheel="imwheel -b '45'"
 alias speedtest="speedtest-cli --secure"
 alias grep="grep -i"
@@ -131,12 +132,12 @@ alias todid="topydo do"
 alias todos="topydo ls"
 alias code="vscodium"
 alias spt="ncspot"
-alias sn="sncli -c $HOME/.config/sncli/snclirc"
+alias sn='sncli -c $HOME/.config/sncli/snclirc'
 alias bm="bashmount"
 alias scim="sc-im"
 alias td="topydo"
 alias 2048="2048 bluered"
-alias nvm-source="source '$NVM_DIR/nvm.sh' ${NVM_LAZY+'--no-use'}"
+alias nvm-source='source ''$NVM_DIR'/nvm.sh' ${NVM_LAZY+'--no-use'}'
 alias dm="dmenu_run"
 alias ra="ranger"
 alias b="buku"
@@ -161,13 +162,13 @@ alias bootgrade="upgrade --combinedupgrade ; sudo reboot"
 alias zzz="systemctl suspend -i"
 
 #Vim file
-    #common
+#common
 alias vw="vim ~/Documents/vimwiki/index.md"
 alias readme="vim README.md"
 alias license="vim LICENSE"
 alias pson="vim package.json"
 
-    #conf
+#conf
 alias paconf="vim /etc/pacman.conf"
 alias apacheconf="vim /etc/httpd/conf/httpd.conf"
 alias phpconf="vim /etc/php/php.ini"
@@ -191,7 +192,7 @@ alias mimeconf="vim ~/.config/mimeapps.list"
 # cd
 alias ..='cd ..'
 alias setcurrent="/home/tony/.scripts/set-current"
-alias current="cd /home/tony/Development/web-dev/vue/lachina-menu"
+alias current="cd /home/tony/Development/web-dev/vue/portfolio"
 
 alias down="cd ~/Downloads"
 alias docs="cd ~/Documents"
@@ -210,7 +211,7 @@ alias ldev="cd ~/Development/low-dev"
 alias latex-cv="cd ~/Documents/LaTeX/curriculum-vitae"
 alias work="cd ~/Development/work/lionintel/php"
 
-    #conf
+#conf
 alias conf="cd ~/.config"
 alias dwconf="cd ~/.config/dwm"
 alias dmconf="cd ~/.config/dmenu"
@@ -247,77 +248,77 @@ alias findprocess='ps -Af | grep'
 #    │ Functions │
 #    ╰───────────╯
 # Less pipes
-wtfis() { curl "https://cheat.sh/$1" | less }
-
-ie() { bro "$1" | less }
+tip() {
+  curl "https://cheat.sh/$1" | less
+}
 
 # Vim pipes
 gd() {
-    if [[ "$1" == "" ]]; then
-        git diff | nvim --noplugin
-    else
-        git diff "$1" | nvim --noplugin
-    fi
+  if [[ "$1" == "" ]]; then
+    git diff | vim
+  else
+    git diff "$1" | vim
+  fi
 }
 
 gdc() {
-    if [[ "$1" == "" ]]; then
-        git diff --cached | nvim --noplugin
-    else
-        git diff --cached "$1" | nvim --noplugin
-    fi
+  if [[ "$1" == "" ]]; then
+    git diff --cached | vim
+  else
+    git diff --cached "$1" | vim
+  fi
 }
 
 p() {
-    if [[ "$1" == "" ]]; then
-        ping -c 3 gnu.org
-    else
-        ping -c 3 "$1"
-    fi
+  if [[ "$1" == "" ]]; then
+    ping -c 3 gnu.org
+  else
+    ping -c 3 "$1"
+  fi
 }
 
 webjpeg() {
-    convert $1 -sampling-factor 4:2:0 -strip -quality 80 -interlace JPEG -colorspace sRGB $2
+  convert "$1" -sampling-factor 4:2:0 -strip -quality 80 -interlace JPEG -colorspace sRGB "$2"
 }
 
 webpng() {
-    convert $1 -strip $2
+  convert "$1" -strip "$2"
 }
 
 websvg() {
-    svgo $1 -o $2
+  svgo "$1" -o "$2"
 }
 
 webjpegbatch() {
-    mogrify -sampling-factor 4:2:0 -strip -quality 80 -interlace JPEG -colorspace sRGB -path "$1" *.jpg
+  mogrify -sampling-factor 4:2:0 -strip -quality 80 -interlace JPEG -colorspace sRGB -path "$1" ./*.jpg
 }
 
 webpngbatch() {
-    mogrify -sampling-factor 4:2:0 -strip -quality 80 -interlace JPEG -colorspace sRGB -path "$1" *.png
+  mogrify -sampling-factor 4:2:0 -strip -quality 80 -interlace JPEG -colorspace sRGB -path "$1" ./*.png
 }
 
 what-command() {
-    pacman -Qlq $1 | grep /usr/bin/
+  pacman -Qlq "$1" | grep /usr/bin/
 }
 
 if [[ -d "/home/tony/intelephense" ]]; then
-    trash /home/tony/intelephense
+  trash /home/tony/intelephense
 fi
 
 if [[ -d "/home/tony/Public" ]]; then
-    trash /home/tony/Public
+  trash /home/tony/Public
 fi
 
 if [[ -d "/home/tony/Templates" ]]; then
-    trash /home/tony/Templates
+  trash /home/tony/Templates
 fi
 
 if [[ -d "/home/tony/Desktop" ]]; then
-    trash /home/tony/Desktop
+  trash /home/tony/Desktop
 fi
 
 if [[ -d "/home/tony/go" ]]; then
-    trash /home/tony/go
+  trash /home/tony/go
 fi
 
 # pokemon-colorscripts -r --no-title
