@@ -1,9 +1,14 @@
-ath+=$HOME/.scripts
+GOPATH=/home/tony/.go
+export GOPATH
+
+path+=$HOME/.scripts
 path+=$HOME/.cargo/bin
 path+=$HOME/.local/bin
 path+=$HOME/.npm/global/bin
+path+=$GOPATH/bin
 #path+=.
-export PATH
+export path
+
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
@@ -102,7 +107,6 @@ alias ping='ping -c 3'
 alias dmesg='dmesg -HL'
 alias upgrade="yay -Syu --combinedupgrade"
 alias less="bat -f --paging=always"
-alias lf='/home/tony/.config/lf/lfrun'
 alias nsxiv="nsxiv -a -r -s f"
 alias vi="nvim --noplugin"
 alias vim="lvim"
@@ -121,7 +125,7 @@ alias t="trash"
 alias firefoxserver="live-server --browser=firefox-developer-edition"
 alias chromeserver="live-server --browser=google-chrome-unstable"
 alias quteserver="live-server --browser=qutebrowser"
-alias unzip="unzip -d ./zip"
+# alias unzip="unzip -d ./zip"
 alias du1='du --max-depth=1'
 alias o="xdg-open"
 alias getdefault="xdg-mime query default"
@@ -199,12 +203,12 @@ alias docs="cd ~/Documents"
 alias pics="cd ~/Pictures"
 alias music="cd ~/Music"
 alias videos="cd ~/Videos"
+alias movies="cd ~/Videos/Movies"
 alias scripts="cd ~/.scripts"
 alias books="cd ~/Documents/books"
 alias media="cd /run/media/tony"
 
 alias desk="cd /usr/share/applications"
-alias platzi="cd ~/Development/courses/platzi"
 alias wdev="cd ~/Development/web-dev"
 alias gdev="cd ~/Development/game-dev"
 alias ldev="cd ~/Development/low-dev"
@@ -299,6 +303,10 @@ webpngbatch() {
 
 what-command() {
   pacman -Qlq "$1" | grep /usr/bin/
+}
+
+dcupdf() {
+  docker compose -f "$1" up -d
 }
 
 if [[ -d "/home/tony/intelephense" ]]; then

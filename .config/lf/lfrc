@@ -2,9 +2,11 @@
 #  │ Setup   │
 #  ╰─────────╯
 set icons
-# set colors ~/.config/lf/colors
-set cleaner ~/.config/lf/cleaner
-set previewer ~/.config/lf/preview
+set previewer ctpv
+set cleaner ctpvclear
+
+&ctpv -s $id
+&ctpvquit $id
 
 #  ╭─────────╮
 #  │ Options │
@@ -198,6 +200,7 @@ cmd no_preview &{{
 	lf -remote "send $id map , yes_preview"
 	lf -remote "send $id set ratios 2:10"
 	lf -remote "send $id set nopreview"
+    ctpvclear
 }}
 
 cmd md ${{mkdir $1}}

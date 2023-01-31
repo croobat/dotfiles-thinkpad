@@ -4,7 +4,7 @@ configuration {
   drun-display-format: "{icon} {name}";
   font: "Recursive Mono Linear Static Medium 12";
   modi: "window,drun,run,ssh,emoji,clipboard:greenclip print";
-  show-icons: false;
+  show-icons: true;
   terminal: "alacritty";
   kb-mode-complete: "";
   kb-accept-entry: "Control+m,Return,KP_Enter,Control+l";

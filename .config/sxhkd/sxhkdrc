@@ -1,14 +1,14 @@
 ### Basic binds ###
 #File manager
 
-
 ### Tools ###
 # Rofi{{{
 super + r
 	j4-dmenu-desktop --term=alacritty
 super + shift + r
 	rofi -show drun
-
+super + shift + r
+	rofi -show calc -modi calc -no-show-match -no-sort
 # Show windows
 alt + Tab
 	rofi -show window
@@ -18,15 +18,9 @@ super + F2
 # Show ssh
 super + F3
 	rofi -show ssh
-
 # Clipboard history
 super + c
 	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
-
-# Rotate screen
-super + s
-	alacritty -e /home/tony/.scripts/rotate-screen
-
 # Show emojis
 super + slash
 	rofi -show emoji
@@ -79,6 +73,9 @@ super + v
 super + control + shift + v
 	alacritty -e pulsemixer
 
+# Rotate screen
+super + s
+	alacritty -e /home/tony/.scripts/rotate-screen
 # }}}
 
 # Media keys{{{
