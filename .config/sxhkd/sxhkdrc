@@ -7,7 +7,7 @@ super + r
 	j4-dmenu-desktop --term=alacritty
 super + shift + r
 	rofi -show drun
-super + shift + r
+super + shift + c
 	rofi -show calc -modi calc -no-show-match -no-sort
 # Show windows
 alt + Tab

@@ -69,7 +69,7 @@ map pp paste
 
 # Movement
 map gd cd ~/Documents
-map gc cd ~/Documents/Courses
+map gc cd ~/.config
 map gv cd ~/Development
 map gw cd ~/Development/web-dev
 map gW cd ~/Development/work
@@ -81,6 +81,7 @@ map gs cd ~/.scripts
 map gm cd ~/Videos/Movies
 map gM cd ~/Music
 map gu cd /run/media/tony
+map gU cd ~/.mnt
 map gb cd ~/Documents/books
 
 # Faster scrolling

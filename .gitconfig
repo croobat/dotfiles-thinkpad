@@ -15,7 +15,7 @@
 [diff]
 	tool = nvimdiff
 [difftool "nvimdiff"]
-	cmd = "nvim --noplugin -d \"$LOCAL\" \"$REMOTE\""
+	cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [alias]
 [safe]
 	directory = /opt/flutter

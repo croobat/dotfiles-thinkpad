@@ -53,7 +53,7 @@ source $ZSH/oh-my-zsh.sh
 # ls
 alias ls='exa --no-icons --group-directories-first'
 alias gls='ls --git-ignore'
-alias tree='ls -T'
+# alias tree='ls -T'
 alias lr='ls -R'
 alias ll='ls -l'
 alias la='ll -a'
@@ -90,6 +90,7 @@ alias gslogm="git log --graph --abbrev-commit --decorate --date=relative --forma
 alias glg='git log --stat --no-merges'
 alias glog='git log --oneline --decorate --graph --no-merges'
 alias gslog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all --no-merges"
+alias gd="git diff"
 alias gdd="git difftool"
 alias git-remove-all-branches='git branch | grep -v "master\|main\|develop\|ARamirez" | xargs git branch -D'
 
@@ -109,7 +110,7 @@ alias upgrade="yay -Syu --combinedupgrade"
 alias less="bat -f --paging=always"
 alias nsxiv="nsxiv -a -r -s f"
 alias vi="nvim --noplugin"
-alias vim="lvim"
+alias vim="nvim"
 alias hist="history | bat"
 alias ssh="TERM=xterm-256color ssh"
 alias imwheel="imwheel -b '45'"
@@ -207,6 +208,7 @@ alias movies="cd ~/Videos/Movies"
 alias scripts="cd ~/.scripts"
 alias books="cd ~/Documents/books"
 alias media="cd /run/media/tony"
+alias mnt="cd ~/.mnt"
 
 alias desk="cd /usr/share/applications"
 alias wdev="cd ~/Development/web-dev"
@@ -214,8 +216,9 @@ alias gdev="cd ~/Development/game-dev"
 alias ldev="cd ~/Development/low-dev"
 alias latex-cv="cd ~/Documents/LaTeX/curriculum-vitae"
 alias work="cd ~/Development/work/lionintel/php"
+alias tachi="cd ~/.local/share/Tachidesk/downloads"
 
-#conf
+#cd conf dir
 alias conf="cd ~/.config"
 alias dwconf="cd ~/.config/dwm"
 alias dmconf="cd ~/.config/dmenu"
@@ -257,13 +260,13 @@ tip() {
 }
 
 # Vim pipes
-gd() {
-  if [[ "$1" == "" ]]; then
-    git diff | vim
-  else
-    git diff "$1" | vim
-  fi
-}
+# gd() {
+#   if [[ "$1" == "" ]]; then
+#     git diff | vim
+#   else
+#     git diff "$1" | vim
+#   fi
+# }
 
 gdc() {
   if [[ "$1" == "" ]]; then
@@ -325,8 +328,8 @@ if [[ -d "/home/tony/Desktop" ]]; then
   trash /home/tony/Desktop
 fi
 
-if [[ -d "/home/tony/go" ]]; then
-  trash /home/tony/go
-fi
-
+# if [[ -d "/home/tony/go" ]]; then
+#   trash /home/tony/go
+# fi
+#
 # pokemon-colorscripts -r --no-title
