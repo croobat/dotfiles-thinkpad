@@ -1,11 +1,13 @@
-GOPATH=/home/tony/.go
-export GOPATH
-
-path+=$HOME/.scripts
-path+=$HOME/.cargo/bin
+# Binary packages
 path+=$HOME/.local/bin
+# Rust packages
+path+=$HOME/.cargo/bin
+# Node packages
 path+=$HOME/.npm/global/bin
-path+=$GOPATH/bin
+# Go packages
+path+=$HOME/.go/bin
+# Personal scripts
+path+=$HOME/.scripts
 #path+=.
 export path
 
@@ -15,23 +17,10 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 # ZSH_THEME (xiong-chamiov-plus mod)
 export PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;30m%}@%{\e[0m%}%{\e[0;36m%}%m%{\e[0;34m%}%B]%b%{\e[0m%} - %b%{\e[0;34m%}%B[%b%{\e[1;37m%}%5~%{\e[0;34m%}%B]%b%{\e[0m%} - %{\e[0;34m%}%B[%b%{\e[0;33m%}'%D{"%H:%M"}%b$'%{\e[0;34m%}%B]%b%{\e[0m%}
 %{\e[0;34m%}%B└─%B[%{\e[1;35m%}$%{\e[0;34m%}%B] <$(git_prompt_info)>%{\e[0m%}%b '
-
 PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '
 
-# Empty line after each command
-precmd() {
-  precmd() {
-    echo
-  }
-}
-
 export CASE_SENSITIVE="false"
-
 export HYPHEN_INSENSITIVE="true"
-
-zstyle ':omz:update' mode auto
-zstyle ':omz:update' frequency 7
-
 export HIST_STAMPS="yyyy-mm-dd"
 
 export plugins=(
@@ -45,6 +34,16 @@ export plugins=(
   zsh-syntax-highlighting
 )
 
+zstyle ':omz:update' mode auto
+zstyle ':omz:update' frequency 7
+
+# Empty line after each command
+precmd() {
+  precmd() {
+    echo
+  }
+}
+
 source $ZSH/oh-my-zsh.sh
 
 #    ╭─────────╮
@@ -53,7 +52,6 @@ source $ZSH/oh-my-zsh.sh
 # ls
 alias ls='exa --no-icons --group-directories-first'
 alias gls='ls --git-ignore'
-# alias tree='ls -T'
 alias lr='ls -R'
 alias ll='ls -l'
 alias la='ll -a'
@@ -63,7 +61,6 @@ alias lz='ll --sort=size'
 alias lt='ll --sort=date'
 
 alias bat='bat --theme=base16 --pager="less -FRX -I"'
-alias lm='ls -lah | bat'
 
 # Permissions
 alias chown='chown --preserve-root'
@@ -82,6 +79,7 @@ alias updatedb='sudo updatedb --verbose'
 alias pacinn="sudo pacman -S --needed"
 alias yainn="yay -S --needed"
 alias yainch="yay -S --mflags \"--skipchecksums --skippgpcheck\""
+alias upgrade="yay -Syu --combinedupgrade"
 
 # Git
 alias glgm='git log --stat'
@@ -91,6 +89,7 @@ alias glg='git log --stat --no-merges'
 alias glog='git log --oneline --decorate --graph --no-merges'
 alias gslog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all --no-merges"
 alias gd="git diff"
+alias gdc="git diff --cached"
 alias gdd="git difftool"
 alias git-remove-all-branches='git branch | grep -v "master\|main\|develop\|ARamirez" | xargs git branch -D'
 
@@ -106,32 +105,31 @@ alias md='mkdir -p -v'
 alias nano='nano -w'
 alias ping='ping -c 3'
 alias dmesg='dmesg -HL'
-alias upgrade="yay -Syu --combinedupgrade"
 alias less="bat -f --paging=always"
 alias nsxiv="nsxiv -a -r -s f"
 alias vi="nvim --noplugin"
 alias vim="nvim"
 alias hist="history | bat"
 alias ssh="TERM=xterm-256color ssh"
-alias imwheel="imwheel -b '45'"
 alias speedtest="speedtest-cli --secure"
 alias grep="grep -i"
 alias rclone="rclone -P"
 alias cbonsai="cbonsai -li -t 0.01 -w 4 -M 5 -L 50"
 alias easytag="GTK_THEME=Adwaita:light easytag"
-alias md2html="python /home/tony/.local/bin/md2html"
 
 #Abbreviated
 alias t="trash"
 alias firefoxserver="live-server --browser=firefox-developer-edition"
 alias chromeserver="live-server --browser=google-chrome-unstable"
 alias quteserver="live-server --browser=qutebrowser"
-# alias unzip="unzip -d ./zip"
 alias du1='du --max-depth=1'
+alias du2='du --max-depth=2'
+alias du3='du --max-depth=3'
 alias o="xdg-open"
 alias getdefault="xdg-mime query default"
 alias setdefault="xdg-mime default"
 alias gettype="xdg-mime query filetype"
+alias td="topydo"
 alias todo="topydo add"
 alias todid="topydo do"
 alias todos="topydo ls"
@@ -140,15 +138,12 @@ alias spt="ncspot"
 alias sn='sncli -c $HOME/.config/sncli/snclirc'
 alias bm="bashmount"
 alias scim="sc-im"
-alias td="topydo"
 alias 2048="2048 bluered"
-alias nvm-source='source ''$NVM_DIR'/nvm.sh' ${NVM_LAZY+'--no-use'}'
+alias nvmsource='source ''$NVM_DIR'/nvm.sh' ${NVM_LAZY+'--no-use'}'
 alias dm="dmenu_run"
 alias ra="ranger"
-alias b="buku"
 alias maria="mariadb"
 alias rust="rustc"
-alias bm="bashmount"
 alias firefox="firefox-developer-edition"
 alias fox="firefox-developer-edition"
 
@@ -197,10 +192,11 @@ alias mimeconf="vim ~/.config/mimeapps.list"
 # cd
 alias ..='cd ..'
 alias setcurrent="/home/tony/.scripts/set-current"
-alias current="cd /home/tony/Development/web-dev/vue/portfolio"
+alias current="cd /home/tony/Development/web-dev/html/basic-portfolio"
 
 alias down="cd ~/Downloads"
 alias docs="cd ~/Documents"
+alias dev="cd ~/Development"
 alias pics="cd ~/Pictures"
 alias music="cd ~/Music"
 alias videos="cd ~/Videos"
@@ -214,7 +210,7 @@ alias desk="cd /usr/share/applications"
 alias wdev="cd ~/Development/web-dev"
 alias gdev="cd ~/Development/game-dev"
 alias ldev="cd ~/Development/low-dev"
-alias latex-cv="cd ~/Documents/LaTeX/curriculum-vitae"
+alias cvlatex="cd ~/Development/LaTeX/curriculum-vitae"
 alias work="cd ~/Development/work/lionintel/php"
 alias tachi="cd ~/.local/share/Tachidesk/downloads"
 
@@ -259,23 +255,6 @@ tip() {
   curl "https://cheat.sh/$1" | less
 }
 
-# Vim pipes
-# gd() {
-#   if [[ "$1" == "" ]]; then
-#     git diff | vim
-#   else
-#     git diff "$1" | vim
-#   fi
-# }
-
-gdc() {
-  if [[ "$1" == "" ]]; then
-    git diff --cached | vim
-  else
-    git diff --cached "$1" | vim
-  fi
-}
-
 p() {
   if [[ "$1" == "" ]]; then
     ping -c 3 gnu.org
@@ -312,24 +291,18 @@ dcupdf() {
   docker compose -f "$1" up -d
 }
 
-if [[ -d "/home/tony/intelephense" ]]; then
-  trash /home/tony/intelephense
-fi
-
-if [[ -d "/home/tony/Public" ]]; then
-  trash /home/tony/Public
-fi
-
-if [[ -d "/home/tony/Templates" ]]; then
-  trash /home/tony/Templates
-fi
-
-if [[ -d "/home/tony/Desktop" ]]; then
-  trash /home/tony/Desktop
-fi
-
-# if [[ -d "/home/tony/go" ]]; then
-#   trash /home/tony/go
+# if [[ -d "/home/tony/intelephense" ]]; then
+#   trash /home/tony/intelephense
 # fi
-#
-# pokemon-colorscripts -r --no-title
+
+# if [[ -d "/home/tony/Public" ]]; then
+#   trash /home/tony/Public
+# fi
+
+# if [[ -d "/home/tony/Templates" ]]; then
+#   trash /home/tony/Templates
+# fi
+
+# if [[ -d "/home/tony/Desktop" ]]; then
+#   trash /home/tony/Desktop
+# fi

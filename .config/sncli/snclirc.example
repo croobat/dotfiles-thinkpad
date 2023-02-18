@@ -1,6 +1,6 @@
 [sncli]
 cfg_sn_username = tonyramirez.main@gmail.com
-cfg_sn_password = cambiar_contrasena
+cfg_sn_password = pass
 
 # see http://urwid.org/manual/userinput.html for examples of more key combinations
 # Common

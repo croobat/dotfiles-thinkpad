@@ -1,5 +1,5 @@
 # Font
-set font 'JetBrainsMono Nerd Font 10'
+set font 'JetBrainsMono Nerd Font 9'
 
 # Settings
 set statusbar-h-padding 20

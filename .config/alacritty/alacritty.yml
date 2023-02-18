@@ -24,6 +24,7 @@ font:
     style: Semibold Italic
 
   size: 8.5
+  # size: 5.5
 
   offset:
     x: 0

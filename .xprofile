@@ -12,7 +12,7 @@ xset s 1800
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
 # Touchpad sensitivity
-xinput set-prop 'SYNA8004:00 06CB:CD8B Touchpad' 'libinput Accel Speed' +0.1
+# xinput set-prop 'SYNA8004:00 06CB:CD8B Touchpad' 'libinput Accel Speed' +0.1
 # xinput set-prop 'SYNA8004:00 06CB:CD8B Touchpad' 'libinput Scrolling Pixel Distance' 10
 
 # Export tools
@@ -21,10 +21,11 @@ export BROWSER=qutebrowser
 # export BROWSER=firefox-developer-edition
 export LESS='-R -j8'
 export MANPAGER='less'
+export GOPATH=/home/tony/.go
 
 # Export colors
 export EXA_COLORS="ur=3;33;40m:uw=3;33;40m:ux=3;33;40m:ue=3;33;40m:gr=3;34;40m:gw=3;34;40m:gx=3;34;40m:tr=3;36;40m:tw=3;36;40m:tx=3;36;40m"
-export LF_COLORS="*.epub=01;35:*.mobi=01;34:*.lua=01;36"
+export LF_COLORS="*.epub=01;35:*.mobi=01;34:*.lua=01;36:*.json=01;32"
 export LESS_TERMCAP_mb=$'\e[1;34m'
 export LESS_TERMCAP_md=$'\e[1;3;34m'
 export LESS_TERMCAP_us=$'\e[3;4;32m'
