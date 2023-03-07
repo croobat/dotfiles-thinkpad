@@ -107,7 +107,7 @@ alias ping='ping -c 3'
 alias dmesg='dmesg -HL'
 alias less="bat -f --paging=always"
 alias nsxiv="nsxiv -a -r -s f"
-alias vi="nvim --noplugin"
+alias vi="\vim"
 alias vim="nvim"
 alias hist="history | bat"
 alias ssh="TERM=xterm-256color ssh"
@@ -182,8 +182,6 @@ alias bindsconf="vim ~/.config/sxhkd/sxhkdrc"
 alias qutemarks="vim ~/.config/qutebrowser/quickmarks"
 alias qutequick="vim ~/.config/qutebrowser/quickmarks"
 alias xinit="vim ~/.xinitrc"
-alias lviminit="vim ~/.config/lvim/config.lua"
-alias lvimplug="vim ~/.config/lvim/lua/tony/plugins.lua"
 alias viminit="vim ~/.config/nvim/init.lua"
 alias vimplug="vim ~/.config/nvim/lua/plugins/init.lua"
 alias lfconf="vim ~/.config/lf/lfrc"
@@ -203,7 +201,7 @@ alias videos="cd ~/Videos"
 alias movies="cd ~/Videos/Movies"
 alias scripts="cd ~/.scripts"
 alias books="cd ~/Documents/books"
-alias media="cd /run/media/tony"
+alias media="cd /media"
 alias mnt="cd ~/.mnt"
 
 alias desk="cd /usr/share/applications"
@@ -219,7 +217,6 @@ alias conf="cd ~/.config"
 alias dwconf="cd ~/.config/dwm"
 alias dmconf="cd ~/.config/dmenu"
 alias vimconf="cd ~/.config/nvim"
-alias lvimconf="cd ~/.config/lvim"
 alias quteconf="cd ~/.config/qutebrowser"
 alias rangerconf="cd ~/.config/ranger"
 alias packerconf="cd ~/.local/share/nvim/site/pack/packer"
@@ -293,16 +290,4 @@ dcupdf() {
 
 # if [[ -d "/home/tony/intelephense" ]]; then
 #   trash /home/tony/intelephense
-# fi
-
-# if [[ -d "/home/tony/Public" ]]; then
-#   trash /home/tony/Public
-# fi
-
-# if [[ -d "/home/tony/Templates" ]]; then
-#   trash /home/tony/Templates
-# fi
-
-# if [[ -d "/home/tony/Desktop" ]]; then
-#   trash /home/tony/Desktop
 # fi
