@@ -8,6 +8,10 @@ xset r rate 250 40
 # Longer time before screen turn-off
 xset s 1800
 
+# Udev rule para evitar movimiento de trackpoint automático (y retraso en click y touchpad)
+# /etc/udev/rules.d/10-trackpint.rules
+# ACTION=="add", SUBSYSTEM=="input", ATTR{name}=="TPPS/2 Elan TrackPoint", ATTR{device/drift_time}="25"
+
 # DPI
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 

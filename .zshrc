@@ -146,6 +146,7 @@ alias maria="mariadb"
 alias rust="rustc"
 alias firefox="firefox-developer-edition"
 alias fox="firefox-developer-edition"
+alias dcp="docker cp"
 
 #New
 alias openports='ss --all --numeric --processes --ipv4 --ipv6'

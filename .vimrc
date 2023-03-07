@@ -4,7 +4,6 @@ colorscheme catppuccin_mocha
 " System
 set nobackup
 set noswapfile
-set clipboard=unnamedplus
 set fileencoding=utf-8
 set mouse=a
 set undofile
@@ -42,7 +41,7 @@ set numberwidth=2
 set signcolumn=yes
 
 " Visuals
-set showbreak=\ ..\
+set showbreak=..
 set conceallevel=0
 set noshowmode
 set termguicolors
@@ -59,7 +58,6 @@ set completeopt=menuone,noselect
 set timeoutlen=300
 set updatetime=300
 set wildmode="bashcomp"
-set stal=2
 set nospell
 
 " Appends
