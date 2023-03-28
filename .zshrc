@@ -109,7 +109,7 @@ alias less="bat -f --paging=always"
 alias nsxiv="nsxiv -a -r -s f"
 alias vi="\vim"
 alias vim="nvim"
-alias hist="history | bat"
+alias hist="history | \less +G"
 alias ssh="TERM=xterm-256color ssh"
 alias speedtest="speedtest-cli --secure"
 alias grep="grep -i"
@@ -147,6 +147,7 @@ alias rust="rustc"
 alias firefox="firefox-developer-edition"
 alias fox="firefox-developer-edition"
 alias dcp="docker cp"
+alias xclipp="xclip -selection clipboard"
 
 #New
 alias openports='ss --all --numeric --processes --ipv4 --ipv6'
@@ -204,6 +205,7 @@ alias scripts="cd ~/.scripts"
 alias books="cd ~/Documents/books"
 alias media="cd /media"
 alias mnt="cd ~/.mnt"
+alias japanese="cd ~/Documents/courses/japanese"
 
 alias desk="cd /usr/share/applications"
 alias wdev="cd ~/Development/web-dev"
@@ -289,6 +291,6 @@ dcupdf() {
   docker compose -f "$1" up -d
 }
 
-# if [[ -d "/home/tony/intelephense" ]]; then
-#   trash /home/tony/intelephense
-# fi
+if [[ -d "/home/tony/intelephense" ]]; then
+  trash /home/tony/intelephense
+fi

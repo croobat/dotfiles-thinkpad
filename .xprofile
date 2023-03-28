@@ -13,11 +13,12 @@ xset s 1800
 # ACTION=="add", SUBSYSTEM=="input", ATTR{name}=="TPPS/2 Elan TrackPoint", ATTR{device/drift_time}="25"
 
 # DPI
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge -I "$HOME" ~/.Xresources
 
 # Touchpad sensitivity
 # xinput set-prop 'SYNA8004:00 06CB:CD8B Touchpad' 'libinput Accel Speed' +0.1
 # xinput set-prop 'SYNA8004:00 06CB:CD8B Touchpad' 'libinput Scrolling Pixel Distance' 10
+xinput set-prop 'TPPS/2 Elan TrackPoint' 'libinput Accel Speed' -0.2
 
 # Export tools
 export EDITOR=nvim

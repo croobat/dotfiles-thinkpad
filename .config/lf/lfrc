@@ -80,7 +80,7 @@ map gv cd ~/Videos
 map gs cd ~/.scripts
 map gm cd ~/Videos/Movies
 map gM cd ~/Music
-map gu cd /run/media/tony
+map gu cd /media/
 map gU cd ~/.mnt
 map gb cd ~/Documents/books
 
