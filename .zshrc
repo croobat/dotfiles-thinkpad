@@ -44,7 +44,7 @@ precmd() {
   }
 }
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 #    ╭─────────╮
 #    │ Aliases │
@@ -79,7 +79,6 @@ alias updatedb='sudo updatedb --verbose'
 alias pacinn="sudo pacman -S --needed"
 alias yainn="yay -S --needed"
 alias yainch="yay -S --mflags \"--skipchecksums --skippgpcheck\""
-alias upgrade="yay -Syu --combinedupgrade"
 
 # Git
 alias glgm='git log --stat'
@@ -192,7 +191,7 @@ alias mimeconf="vim ~/.config/mimeapps.list"
 # cd
 alias ..='cd ..'
 alias setcurrent="/home/tony/.scripts/set-current"
-alias current="cd /home/tony/Development/web-dev/html/basic-portfolio"
+alias current="cd /home/tony/Development/mobile-dev/tracktor/tracktor"
 
 alias down="cd ~/Downloads"
 alias docs="cd ~/Documents"
@@ -211,6 +210,7 @@ alias desk="cd /usr/share/applications"
 alias wdev="cd ~/Development/web-dev"
 alias gdev="cd ~/Development/game-dev"
 alias ldev="cd ~/Development/low-dev"
+alias mdev="cd ~/Development/mobile-dev"
 alias cvlatex="cd ~/Development/LaTeX/curriculum-vitae"
 alias work="cd ~/Development/work/lionintel/php"
 alias tachi="cd ~/.local/share/Tachidesk/downloads"
@@ -231,7 +231,7 @@ alias playwav='mpv *.wav'
 alias playogg='mpv *.ogg'
 alias playmp3='mpv *.mp3'
 
-#video
+# Video
 alias playavi='mpv *.avi'
 alias playmov='mpv *.mov'
 alias playmp4='mpv *.mp4'
@@ -244,8 +244,26 @@ alias :Q=' exit'
 alias :x=' exit'
 alias cd..='cd ..'
 
-#Grep pipe
+# Grep pipe
 alias findprocess='ps -Af | grep'
+
+# Paru
+alias parclean='paru -Sc'
+alias parclr='paru -Scc'
+alias parupg='paru -Sua'
+alias parin='paru -S'
+alias parre='paru -R'
+alias parrem='paru -Rns'
+alias parrep='paru -Si'
+alias parreps='paru -Ss'
+alias parloc='paru -Qi'
+alias parlocs='paru -Qs'
+alias parlst='paru -Qe'
+alias parorph='paru -Qtd'
+alias parinsd='paru -S --asdeps'
+alias parmir='paru -Syy'
+alias parupd="paru -Sy"
+alias upgrade='paru -Syu --combinedupgrade'
 
 #    ╭───────────╮
 #    │ Functions │

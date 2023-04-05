@@ -8,16 +8,10 @@ xset r rate 250 40
 # Longer time before screen turn-off
 xset s 1800
 
-# Udev rule para evitar movimiento de trackpoint automático (y retraso en click y touchpad)
-# /etc/udev/rules.d/10-trackpint.rules
-# ACTION=="add", SUBSYSTEM=="input", ATTR{name}=="TPPS/2 Elan TrackPoint", ATTR{device/drift_time}="25"
-
 # DPI
 [[ -f ~/.Xresources ]] && xrdb -merge -I "$HOME" ~/.Xresources
 
 # Touchpad sensitivity
-# xinput set-prop 'SYNA8004:00 06CB:CD8B Touchpad' 'libinput Accel Speed' +0.1
-# xinput set-prop 'SYNA8004:00 06CB:CD8B Touchpad' 'libinput Scrolling Pixel Distance' 10
 xinput set-prop 'TPPS/2 Elan TrackPoint' 'libinput Accel Speed' -0.2
 
 # Export tools
@@ -37,6 +31,9 @@ export LESS_TERMCAP_us=$'\e[3;4;32m'
 export LESS_TERMCAP_me=$'\e[0m'
 export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_ue=$'\e[0m'
+
+# Android-studio
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Startup apps
 picom &
