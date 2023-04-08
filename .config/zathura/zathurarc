@@ -5,6 +5,8 @@ set font 'JetBrainsMono Nerd Font 9'
 set statusbar-h-padding 20
 set statusbar-v-padding 1
 set page-padding 10
+set scroll-step 100
+set scroll-hstep 100
 
 # Bindings
 map u scroll half-up
@@ -72,10 +74,10 @@ set render-loading-bg           "#f8f8f2" # Foreground
 # Recolor mode settings
 #
 
-# set recolor-lightcolor          "#151721" # Background
-# set recolor-darkcolor           "#f8f8f2" # Foreground
 set recolor-lightcolor          "#161923" # Background
-set recolor-darkcolor           "#bcbdd0" # Foreground
+set recolor-darkcolor           "#e8e8e2" # Foreground
+# set recolor-lightcolor          "#282a36" # Background
+# set recolor-darkcolor           "#f8f8f2" # Foreground
 
 #
 # Startup options

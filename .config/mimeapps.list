@@ -42,6 +42,7 @@ inode/directory=nemo.desktop
 x-scheme-handler/figma=figma-linux.desktop
 x-scheme-handler/postman=Postman.desktop
 x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
+x-scheme-handler/msteams=teams.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-531DS1.desktop;userapp-Thunderbird-FQ3MV1.desktop;
