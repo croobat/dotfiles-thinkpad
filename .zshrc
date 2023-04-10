@@ -147,6 +147,7 @@ alias firefox="firefox-developer-edition"
 alias fox="firefox-developer-edition"
 alias dcp="docker cp"
 alias xclipp="xclip -selection clipboard"
+alias wmjava="wmname LG3D"
 
 #New
 alias openports='ss --all --numeric --processes --ipv4 --ipv6'
