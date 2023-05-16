@@ -115,6 +115,7 @@ alias grep="grep -i"
 alias rclone="rclone -P"
 alias cbonsai="cbonsai -li -t 0.01 -w 4 -M 5 -L 50"
 alias easytag="GTK_THEME=Adwaita:light easytag"
+alias lf="lfrun"
 
 #Abbreviated
 alias t="trash"
@@ -138,7 +139,8 @@ alias sn='sncli -c $HOME/.config/sncli/snclirc'
 alias bm="bashmount"
 alias scim="sc-im"
 alias 2048="2048 bluered"
-alias nvmsource='source ''$NVM_DIR'/nvm.sh' ${NVM_LAZY+'--no-use'}'
+alias nvmsource='source /usr/share/nvm/init-nvm.sh'
+# alias nvmsource='source ''$NVM_DIR'/nvm.sh' ${NVM_LAZY+'--no-use'}'
 alias dm="dmenu_run"
 alias ra="ranger"
 alias maria="mariadb"
@@ -192,7 +194,7 @@ alias mimeconf="vim ~/.config/mimeapps.list"
 # cd
 alias ..='cd ..'
 alias setcurrent="/home/tony/.scripts/set-current"
-alias current="cd /home/tony/Development/mobile-dev/tracktor/tracktor"
+alias current="cd /home/tony/Development/web-dev/html/basic-portfolio"
 
 alias down="cd ~/Downloads"
 alias docs="cd ~/Documents"
@@ -266,6 +268,10 @@ alias parmir='paru -Syy'
 alias parupd="paru -Sy"
 alias upgrade='paru -Syu --combinedupgrade'
 
+# lionintel
+alias lioncezac='fox localhost/lionintel/cezac/htdocs'
+alias liondocker='fox localhost:4588'
+
 #    ╭───────────╮
 #    │ Functions │
 #    ╰───────────╯
@@ -313,3 +319,4 @@ dcupdf() {
 if [[ -d "/home/tony/intelephense" ]]; then
   trash /home/tony/intelephense
 fi
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn

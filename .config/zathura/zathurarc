@@ -1,5 +1,5 @@
 # Font
-set font 'JetBrainsMono Nerd Font 9'
+set font 'JetBrainsMono Nerd Font 8'
 
 # Settings
 set statusbar-h-padding 20
@@ -74,10 +74,8 @@ set render-loading-bg           "#f8f8f2" # Foreground
 # Recolor mode settings
 #
 
-set recolor-lightcolor          "#161923" # Background
-set recolor-darkcolor           "#e8e8e2" # Foreground
-# set recolor-lightcolor          "#282a36" # Background
-# set recolor-darkcolor           "#f8f8f2" # Foreground
+set recolor-lightcolor          "#1b1f2b" # Background
+set recolor-darkcolor           "#d0d0d0" # Foreground
 
 #
 # Startup options

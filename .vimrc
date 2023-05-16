@@ -5,7 +5,7 @@ colorscheme catppuccin_mocha
 set nobackup
 set noswapfile
 set fileencoding=utf-8
-set mouse=a
+set mouse=i
 set undofile
 set nowritebackup
 set title
