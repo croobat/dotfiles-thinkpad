@@ -3,7 +3,7 @@ configuration {
   display-window: "Windows:";
   drun-display-format: "{icon} {name}";
   font: "Recursive Mono Linear Static Medium 12";
-  modi: "window,drun,run,ssh,emoji,clipboard:greenclip print";
+  modi: "window,drun,run,ssh,emoji,calc,clipboard:greenclip print";
   show-icons: true;
   terminal: "alacritty";
   kb-mode-complete: "";
@@ -13,7 +13,4 @@ configuration {
   kb-element-prev: "ISO_Left_Tab,Control+k";
 }
 
-
 @theme "/themes/dark.rasi"
-
-

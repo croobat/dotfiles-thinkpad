@@ -10,15 +10,39 @@
 	helper =
 	helper = !/usr/bin/gh auth git-credential
 
-[difftool]
-	prompt = true
+; Delta
+[core]
+    pager = delta
+	whitespace = tab-in-indent,trailing-space,space-before-tab
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+	light = false
+	wrap-max-lines = 0
+	width = 79
+	keep-plus-minus-markers = true
+	minus-empty-line-marker-style = '"#ffffff"'
+	minus-style = '"#ff5d4d"'
+	minus-emph-style = '"#fdfd96" "#7c0f0f"'
+	plus-style = '"#50fa7b"'
+	plus-emph-style = '"#fdfd96" "#236823"'
+[merge]
+    conflictstyle = diff3
+; /Delta
+
+; [difftool]
+; 	prompt = true
+; [diff]
+; 	tool = nvimdiff
+; [difftool "nvimdiff"]
+; 	cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+; 	prompt = true
+; [alias]
+
 [diff]
-	tool = nvimdiff
-[difftool "nvimdiff"]
-	cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
-[alias]
+    colorMoved = default
 [safe]
-	directory = /opt/flutter
 	directory = /opt/flutter
 [color]
 	ui = auto

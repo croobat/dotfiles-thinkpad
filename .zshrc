@@ -8,6 +8,8 @@ path+=$HOME/.npm/global/bin
 path+=$HOME/.go/bin
 # Personal scripts
 path+=$HOME/.scripts
+# PHP composer packages
+path+=$HOME/.config/composer/vendor/bin:$PATH
 #path+=.
 export path
 
@@ -15,6 +17,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
 # ZSH_THEME (xiong-chamiov-plus mod)
+# shellcheck disable=SC1083
 export PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[0m%}%{\e[1;32m%}%n%{\e[1;30m%}@%{\e[0m%}%{\e[0;36m%}%m%{\e[0;34m%}%B]%b%{\e[0m%} - %b%{\e[0;34m%}%B[%b%{\e[1;37m%}%5~%{\e[0;34m%}%B]%b%{\e[0m%} - %{\e[0;34m%}%B[%b%{\e[0;33m%}'%D{"%H:%M"}%b$'%{\e[0;34m%}%B]%b%{\e[0m%}
 %{\e[0;34m%}%B└─%B[%{\e[1;35m%}$%{\e[0;34m%}%B] <$(git_prompt_info)>%{\e[0m%}%b '
 PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '
@@ -38,12 +41,14 @@ zstyle ':omz:update' mode auto
 zstyle ':omz:update' frequency 7
 
 # Empty line after each command
+# shellcheck disable=SC2317
 precmd() {
   precmd() {
     echo
   }
 }
 
+# shellcheck disable=SC1091
 source "$ZSH/oh-my-zsh.sh"
 
 #    ╭─────────╮
@@ -91,6 +96,7 @@ alias gd="git diff"
 alias gdc="git diff --cached"
 alias gdd="git difftool"
 alias git-remove-all-branches='git branch | grep -v "master\|main\|develop\|ARamirez" | xargs git branch -D'
+alias pn="pnpm"
 
 ## Modified
 alias diff='colordiff'
@@ -106,8 +112,8 @@ alias ping='ping -c 3'
 alias dmesg='dmesg -HL'
 alias less="bat -f --paging=always"
 alias nsxiv="nsxiv -a -r -s f"
-alias vi="\vim"
 alias vim="nvim"
+alias vi="nvim --noplugin"
 alias hist="history | \less +G"
 alias ssh="TERM=xterm-256color ssh"
 alias speedtest="speedtest-cli --secure"
@@ -116,6 +122,7 @@ alias rclone="rclone -P"
 alias cbonsai="cbonsai -li -t 0.01 -w 4 -M 5 -L 50"
 alias easytag="GTK_THEME=Adwaita:light easytag"
 alias lf="lfrun"
+alias mermaid="mmdc --theme forest"
 
 #Abbreviated
 alias t="trash"
@@ -140,7 +147,6 @@ alias bm="bashmount"
 alias scim="sc-im"
 alias 2048="2048 bluered"
 alias nvmsource='source /usr/share/nvm/init-nvm.sh'
-# alias nvmsource='source ''$NVM_DIR'/nvm.sh' ${NVM_LAZY+'--no-use'}'
 alias dm="dmenu_run"
 alias ra="ranger"
 alias maria="mariadb"
@@ -163,7 +169,7 @@ alias fix-android-bar='adb shell settings put global force_fsg_nav_bar 1'
 #Multi
 alias shutgrade="upgrade --combinedupgrade ; sudo shutdown now"
 alias bootgrade="upgrade --combinedupgrade ; sudo reboot"
-alias zzz="systemctl suspend -i"
+alias zzz="betterlockscreen --lock"
 
 #Vim file
 #common
@@ -194,7 +200,7 @@ alias mimeconf="vim ~/.config/mimeapps.list"
 # cd
 alias ..='cd ..'
 alias setcurrent="/home/tony/.scripts/set-current"
-alias current="cd /home/tony/Development/web-dev/html/basic-portfolio"
+alias current="cd /home/tony/Development/web-dev/mern/admin-ease"
 
 alias down="cd ~/Downloads"
 alias docs="cd ~/Documents"
@@ -223,6 +229,7 @@ alias conf="cd ~/.config"
 alias dwconf="cd ~/.config/dwm"
 alias dmconf="cd ~/.config/dmenu"
 alias vimconf="cd ~/.config/nvim"
+alias lvimconf="cd ~/.config/lvim"
 alias quteconf="cd ~/.config/qutebrowser"
 alias rangerconf="cd ~/.config/ranger"
 alias packerconf="cd ~/.local/share/nvim/site/pack/packer"

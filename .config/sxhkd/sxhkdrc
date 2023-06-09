@@ -60,7 +60,8 @@ super + w
 super + b
 	/home/tony/.scripts/bmks
 	# alacritty --title buku -e /home/tony/.scripts/bfind
-# super + shift + b
+super + shift + b
+	alacritty --title bmks-links -e nvim /home/tony/.bmks/urls
 	# /home/tony/.scripts/bukuadd
 
 # Kill

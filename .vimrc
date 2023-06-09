@@ -29,7 +29,7 @@ set pumheight=10
 set showtabline=1
 set splitbelow
 set splitright
-set textwidth=79
+set textwidth=0
 set nowrap
 set scrolloff=8
 set sidescrolloff=0
