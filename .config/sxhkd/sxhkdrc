@@ -1,5 +1,9 @@
 ### Basic binds ###
-#File manager
+# super + alt       OCUPADOS            LIBRES
+#               abcdfghiklmnopqstvyz    ehjuwx
+
+# super             OCUPADOS                        LIBRES
+#               bcdefhijklmpqrtvwxz.,-= Fk F2 F3       agnosy
 
 ### Tools ###
 # Rofi{{{
@@ -52,17 +56,16 @@ control + shift + Escape
 super + alt + q
 	google-chrome-unstable
 super + e
-	firefox-developer-edition
+	firefox
+	# firefox-developer-edition
 super + w
 	qutebrowser
 
 # Bookmarks
 super + b
 	/home/tony/.scripts/bmks
-	# alacritty --title buku -e /home/tony/.scripts/bfind
 super + shift + b
 	alacritty --title bmks-links -e nvim /home/tony/.bmks/urls
-	# /home/tony/.scripts/bukuadd
 
 # Kill
 super + shift + x
@@ -75,7 +78,7 @@ super + control + shift + v
 	alacritty -e pulsemixer
 
 # Rotate screen
-super + s
+super + shift + s
 	alacritty -e /home/tony/.scripts/rotate-screen
 # }}}
 
@@ -137,8 +140,8 @@ super + alt + d
 	discord
 
 super + alt + e
-	alacritty
-	# alacritty msg create-window || alacritty
+	alacritty msg create-window || alacritty
+	# alacritty
 
 # FreeCAD
 super + alt + f
@@ -187,9 +190,3 @@ super + alt + y
 # Whatsapp
 super + alt + z
 	whatsapp-nativefier
-
-# super + alt       OCUPADOS            LIBRES
-#               abcdfghiklmnopqstvyz    ehjuwx
-
-# super             OCUPADOS                        LIBRES
-#               bcdefhijklmpqrtvwxz.,-= Fk F2 F3       agnosy
