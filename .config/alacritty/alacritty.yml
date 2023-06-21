@@ -38,7 +38,7 @@ colors:
     bright_foreground: '#eaeaea'
 
 window:
-  opacity: 0.9
+  opacity: 0.98
 
 hints:
   enabled:

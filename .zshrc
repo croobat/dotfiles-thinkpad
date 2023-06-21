@@ -97,6 +97,9 @@ alias gdc="git diff --cached"
 alias gdd="git difftool"
 alias git-remove-all-branches='git branch | grep -v "master\|main\|develop\|ARamirez" | xargs git branch -D'
 alias pn="pnpm"
+alias gctony='git config user.email "tonyramirez.business@outlook.com" && git config user.name "croobat"'
+alias gclion='git config user.email "antonio.ramirez@lionintel.com" && git config user.name "Tony Ramírez"'
+alias gcbiz='git config user.email "luisantonio@bizont.ca" && git config user.name "Luis Antonio Ramírez"'
 
 ## Modified
 alias diff='colordiff'
@@ -156,6 +159,12 @@ alias fox="firefox-developer-edition"
 alias dcp="docker cp"
 alias xclipp="xclip -selection clipboard"
 alias wmjava="wmname LG3D"
+alias exportless="export LESS_TERMCAP_mb=$'\e[1;34m'
+export LESS_TERMCAP_md=$'\e[1;3;34m'
+export LESS_TERMCAP_us=$'\e[3;4;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_ue=$'\e[0m'"
 
 #New
 alias openports='ss --all --numeric --processes --ipv4 --ipv6'
@@ -221,8 +230,16 @@ alias gdev="cd ~/Development/game-dev"
 alias ldev="cd ~/Development/low-dev"
 alias mdev="cd ~/Development/mobile-dev"
 alias cvlatex="cd ~/Development/LaTeX/curriculum-vitae"
-alias work="cd ~/Development/work/lionintel/php"
 alias tachi="cd ~/.local/share/Tachidesk/downloads"
+
+# Workspace
+if [[ "$DISPLAY" == ":0" ]]; then
+  alias work='cd ~/Development/work/lionintel/php'
+elif [[ "$DISPLAY" == ":1" ]]; then
+  alias work='cd ~/Development/work/bizont'
+else
+  alias work='cd ~/Development/web-dev'
+fi
 
 #cd conf dir
 alias conf="cd ~/.config"

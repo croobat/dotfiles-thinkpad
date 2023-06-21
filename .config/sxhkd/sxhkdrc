@@ -3,7 +3,7 @@
 #               abcdfghiklmnopqstvyz    ehjuwx
 
 # super             OCUPADOS                        LIBRES
-#               bcdefhijklmpqrtvwxz.,-= Fk F2 F3       agnosy
+#               bcdefghijklmpqrtvwxz.,-= Fk F2 F3   anosy
 
 ### Tools ###
 # Rofi{{{
@@ -53,11 +53,18 @@ control + shift + Escape
 	alacritty -e htop
 
 # Web browser
-super + alt + q
-	google-chrome-unstable
-super + e
+# super + e
+# 	firefox
+# super + shift + e
+# 	firefox-developer-edition
+super + f
 	firefox
-	# firefox-developer-edition
+super + shift + f
+	firefox-developer-edition
+super + g
+	google-chrome-stable
+super + shift + g
+	google-chrome-unstable
 super + w
 	qutebrowser
 
