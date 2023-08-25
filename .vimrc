@@ -6,6 +6,7 @@ set nobackup
 set noswapfile
 set fileencoding=utf-8
 set mouse=i
+set clipboard=unnamedplus
 set undofile
 set nowritebackup
 set title
@@ -65,7 +66,6 @@ set listchars="tab:▎,trail:·,precedes:<,extends:>, nbsp:○"
 set shortmess+=Ic
 set whichwrap+=<,>,[,],h,l
 set path+=**
-
 
 """ Mappings
 nnoremap <C-j> 5gj

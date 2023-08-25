@@ -25,6 +25,9 @@ PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '
 export CASE_SENSITIVE="false"
 export HYPHEN_INSENSITIVE="true"
 export HIST_STAMPS="yyyy-mm-dd"
+export BC_ENV_ARGS=~/.config/bc/bcrc
+
+export FZF_DEFAULT_COMMAND='fd'
 
 export plugins=(
   git
@@ -95,7 +98,7 @@ alias gslog="git log --graph --abbrev-commit --decorate --date=relative --format
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias gdd="git difftool"
-alias git-remove-all-branches='git branch | grep -v "master\|main\|develop\|ARamirez" | xargs git branch -D'
+alias git-remove-all-branches='git branch | grep -v "master\|main\|develop\|aramirez" | xargs git branch -D'
 alias pn="pnpm"
 alias gctony='git config user.email "tonyramirez.business@outlook.com" && git config user.name "croobat"'
 alias gclion='git config user.email "antonio.ramirez@lionintel.com" && git config user.name "Tony Ramírez"'
@@ -126,6 +129,7 @@ alias cbonsai="cbonsai -li -t 0.01 -w 4 -M 5 -L 50"
 alias easytag="GTK_THEME=Adwaita:light easytag"
 alias lf="lfrun"
 alias mermaid="mmdc --theme forest"
+alias gs="echo 'te confundiste carnal'"
 
 #Abbreviated
 alias t="trash"
@@ -143,7 +147,6 @@ alias td="topydo"
 alias todo="topydo add"
 alias todid="topydo do"
 alias todos="topydo ls"
-alias code="vscodium"
 alias spt="ncspot"
 alias sn='sncli -c $HOME/.config/sncli/snclirc'
 alias bm="bashmount"
@@ -169,8 +172,8 @@ export LESS_TERMCAP_ue=$'\e[0m'"
 #New
 alias openports='ss --all --numeric --processes --ipv4 --ipv6'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias youtube-dl-playlist-guardar="youtube-dl -x -f bestaudio --external-downloader aria2c --external-downloader-args '-c -j 3 -x 3 -s 3 -k 1M' --ignore-errors --continue --audio-format mp3 'https://www.youtube.com/playlist?list=PLjp-ryEOLdtOGhSXXc2-3VRoyK8uVUjF2'"
-alias youtube-dl-playlist="youtube-dl -x -f bestaudio --external-downloader aria2c --external-downloader-args '-c -j 3 -x 3 -s 3 -k 1M' --ignore-errors --continue --no-overwrites --audio-format mp3"
+alias youtube-dl-playlist-guardar="yt-dlp -x -f bestaudio --external-downloader aria2c --external-downloader-args '-c -j 3 -x 3 -s 3 -k 1M' --ignore-errors --continue --audio-format mp3 'https://www.youtube.com/playlist?list=PLjp-ryEOLdtOGhSXXc2-3VRoyK8uVUjF2'"
+alias youtube-dl-playlist="yt-dlp -x -f bestaudio --external-downloader aria2c --external-downloader-args '-c -j 3 -x 3 -s 3 -k 1M' --ignore-errors --continue --no-overwrites --audio-format mp3"
 alias android-mount='aft-mtp-mount ~/.mnt'
 alias android-umount='fusermount -uz ~/.mnt'
 alias fix-android-bar='adb shell settings put global force_fsg_nav_bar 1'
@@ -178,7 +181,7 @@ alias fix-android-bar='adb shell settings put global force_fsg_nav_bar 1'
 #Multi
 alias shutgrade="upgrade --combinedupgrade ; sudo shutdown now"
 alias bootgrade="upgrade --combinedupgrade ; sudo reboot"
-alias zzz="betterlockscreen --lock"
+alias zzz="betterlockscreen --lock dim"
 
 #Vim file
 #common
@@ -240,6 +243,8 @@ elif [[ "$DISPLAY" == ":1" ]]; then
 else
   alias work='cd ~/Development/web-dev'
 fi
+alias wwork='cd ~/Development/work/bizont'
+alias wrok='echo "te confundiste carnal"'
 
 #cd conf dir
 alias conf="cd ~/.config"
@@ -291,10 +296,6 @@ alias parinsd='paru -S --asdeps'
 alias parmir='paru -Syy'
 alias parupd="paru -Sy"
 alias upgrade='paru -Syu --combinedupgrade'
-
-# lionintel
-alias lioncezac='fox localhost/lionintel/cezac/htdocs'
-alias liondocker='fox localhost:4588'
 
 #    ╭───────────╮
 #    │ Functions │

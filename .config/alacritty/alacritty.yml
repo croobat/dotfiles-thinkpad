@@ -23,7 +23,7 @@ font:
     family: JetBrains Mono Nerd Font
     style: Semibold Italic
 
-  size: 8.5
+  size: 8
 
   offset:
     x: 0
@@ -44,7 +44,8 @@ hints:
   enabled:
   - regex: "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
             [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
-    command: xdg-open
+    # command: xdg-open
+    action: Copy
     post_processing: true
     mouse:
       enabled: true

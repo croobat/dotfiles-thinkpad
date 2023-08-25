@@ -12,13 +12,13 @@ xset s 1800
 [[ -f ~/.Xresources ]] && xrdb -merge -I "$HOME" ~/.Xresources
 
 # Touchpad sensitivity
-xinput set-prop 'TPPS/2 Elan TrackPoint' 'libinput Accel Speed' -0.2
+xinput set-prop 'TPPS/2 Elan TrackPoint' 'libinput Accel Speed' +0.1
 
 # Export tools
 export EDITOR=nvim
 # export BROWSER=qutebrowser
 # export BROWSER=firefox-developer-edition
-export BROWSER=firefox
+# export BROWSER=firefox
 export LESS='-R -j8 -x4'
 export MANPAGER='less'
 export GOPATH=/home/tony/.go

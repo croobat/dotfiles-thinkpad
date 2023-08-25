@@ -27,6 +27,7 @@
 	minus-emph-style = '"#fdfd96" "#7c0f0f"'
 	plus-style = '"#50fa7b"'
 	plus-emph-style = '"#fdfd96" "#236823"'
+	tabs = 4
 [merge]
     conflictstyle = diff3
 ; /Delta
