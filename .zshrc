@@ -10,6 +10,8 @@ path+=$HOME/.go/bin
 path+=$HOME/.scripts
 # PHP composer packages
 path+=$HOME/.config/composer/vendor/bin:$PATH
+# LaTeX build
+path+=/usr/local/texlive/2023/bin/x86_64-linux
 #path+=.
 export path
 
@@ -168,6 +170,7 @@ export LESS_TERMCAP_us=$'\e[3;4;32m'
 export LESS_TERMCAP_me=$'\e[0m'
 export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_ue=$'\e[0m'"
+alias pdf='zathura'
 
 #New
 alias openports='ss --all --numeric --processes --ipv4 --ipv6'
@@ -232,7 +235,7 @@ alias wdev="cd ~/Development/web-dev"
 alias gdev="cd ~/Development/game-dev"
 alias ldev="cd ~/Development/low-dev"
 alias mdev="cd ~/Development/mobile-dev"
-alias cvlatex="cd ~/Development/LaTeX/curriculum-vitae"
+alias cvlatex="cd ~/Development/latex/resume"
 alias tachi="cd ~/.local/share/Tachidesk/downloads"
 
 # Workspace
