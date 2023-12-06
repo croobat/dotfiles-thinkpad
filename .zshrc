@@ -31,11 +31,47 @@ export BC_ENV_ARGS=~/.config/bc/bcrc
 
 export FZF_DEFAULT_COMMAND='fd'
 
+export PROJECT_PATHS=(
+  ~/Development/work/saeko
+)
+
+zstyle :omz:plugins:ssh-agent agent-forwarding yes
+zstyle :omz:plugins:ssh-agent helper ksshaskpass
+zstyle :omz:plugins:ssh-agent identities id_rsa id_ed25519_saeko id_ed25519_lion
+
 export plugins=(
-  git
+  adb
+  aliases
+  ansible
   archlinux
+  autojump
+  bun
+  colored-man-pages
+  common-aliases
+  composer
+  dirhistory
   docker
   docker-compose
+  extract
+  gh
+  git
+  gitignore
+  history
+  git-flow
+  isodate
+  jira
+  jsontools
+  laravel
+  npm
+  pip
+  pj
+  react-native
+  safe-paste
+  ssh-agent
+  sudo
+  systemd
+  yarn
+  z
   zsh-autosuggestions
   zsh-history-substring-search
   you-should-use
@@ -60,7 +96,7 @@ source "$ZSH/oh-my-zsh.sh"
 #    │ Aliases │
 #    ╰─────────╯
 # ls
-alias ls='exa --no-icons --group-directories-first'
+alias ls='exa --group-directories-first'
 alias gls='ls --git-ignore'
 alias lr='ls -R'
 alias ll='ls -l'
@@ -104,7 +140,7 @@ alias git-remove-all-branches='git branch | grep -v "master\|main\|develop\|aram
 alias pn="pnpm"
 alias gctony='git config user.email "tonyramirez.business@outlook.com" && git config user.name "croobat"'
 alias gclion='git config user.email "antonio.ramirez@lionintel.com" && git config user.name "Tony Ramírez"'
-alias gcbiz='git config user.email "luisantonio@bizont.ca" && git config user.name "Luis Antonio Ramírez"'
+alias gcsaeko='git config user.email "tony@saeko.io" && git config user.name "Tony Ramírez"'
 
 ## Modified
 alias diff='colordiff'
@@ -121,8 +157,8 @@ alias dmesg='dmesg -HL'
 alias less="bat -f --paging=always"
 alias nsxiv="nsxiv -a -r -s f"
 alias vim="nvim"
+alias v="nvim"
 alias vi="nvim --noplugin"
-alias hist="history | \less +G"
 alias ssh="TERM=xterm-256color ssh"
 alias speedtest="speedtest-cli --secure"
 alias grep="grep -i"
@@ -182,8 +218,8 @@ alias android-umount='fusermount -uz ~/.mnt'
 alias fix-android-bar='adb shell settings put global force_fsg_nav_bar 1'
 
 #Multi
-alias shutgrade="upgrade --combinedupgrade ; sudo shutdown now"
-alias bootgrade="upgrade --combinedupgrade ; sudo reboot"
+alias shutgrade="upgrade --combinedupgrade && sudo shutdown now"
+alias bootgrade="upgrade --combinedupgrade && sudo reboot"
 alias zzz="betterlockscreen --lock dim"
 
 #Vim file
@@ -220,6 +256,7 @@ alias current="cd /home/tony/Development/web-dev/mern/admin-ease"
 alias down="cd ~/Downloads"
 alias docs="cd ~/Documents"
 alias dev="cd ~/Development"
+alias mobile="cd ~/Development/mobile-dev"
 alias pics="cd ~/Pictures"
 alias music="cd ~/Music"
 alias videos="cd ~/Videos"
@@ -240,13 +277,13 @@ alias tachi="cd ~/.local/share/Tachidesk/downloads"
 
 # Workspace
 if [[ "$DISPLAY" == ":0" ]]; then
-  alias work='cd ~/Development/work/lionintel/php'
+  alias work='cd ~/Development/work/saeko'
 elif [[ "$DISPLAY" == ":1" ]]; then
-  alias work='cd ~/Development/work/bizont'
+  alias work='cd ~/Development/work/lionintel/php'
 else
   alias work='cd ~/Development/web-dev'
 fi
-alias wwork='cd ~/Development/work/bizont'
+alias wwork='cd ~/Development/work/lionintel/php'
 alias wrok='echo "te confundiste carnal"'
 
 #cd conf dir
@@ -308,7 +345,7 @@ tip() {
   curl "https://cheat.sh/$1" | less
 }
 
-p() {
+pi() {
   if [[ "$1" == "" ]]; then
     ping -c 3 gnu.org
   else
@@ -348,3 +385,4 @@ if [[ -d "/home/tony/intelephense" ]]; then
   trash /home/tony/intelephense
 fi
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+

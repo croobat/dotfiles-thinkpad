@@ -33,8 +33,8 @@ super + slash
 # Special keys{{{
 # Terminal
 super + Return
-	alacritty
-	# alacritty msg create-window || alacritty
+	alacritty msg create-window || alacritty
+	# alacritty
 
 # File manager
 super + shift + Return
@@ -144,19 +144,19 @@ super + alt + c
 
 # Discord
 super + alt + d
-	discord
+	dbeaver
 
 super + alt + e
-	alacritty msg create-window || alacritty
-	# alacritty
+	alacritty
+	# alacritty msg create-window || alacritty
 
 # FreeCAD
 super + alt + f
 	freecad
 
-# Godot
+# Google chat
 super + alt + g
-	godot
+	/opt/google-chat-linux/google-chat-linux %U
 
 # Slack
 super + alt + k

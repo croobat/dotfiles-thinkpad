@@ -11,16 +11,16 @@ scrolling:
 
 font:
   normal:
-    family: JetBrains Mono Nerd Font
+    family: JetBrainsMono NF
     style: Regular
   bold:
-    family: JetBrains Mono Nerd Font
+    family: JetBrainsMono NF
     style: Semibold
   italic:
-    family: JetBrains Mono Nerd Font
+    family: JetBrainsMono NF
     style: Italic
   bold_italic:
-    family: JetBrains Mono Nerd Font
+    family: JetBrains Mono NF
     style: Semibold Italic
 
   size: 8
