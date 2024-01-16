@@ -33,6 +33,7 @@ export FZF_DEFAULT_COMMAND='fd'
 
 export PROJECT_PATHS=(
   ~/Development/work/saeko
+  ~/Development/mobile-dev
 )
 
 zstyle :omz:plugins:ssh-agent agent-forwarding yes
@@ -71,7 +72,6 @@ export plugins=(
   sudo
   systemd
   yarn
-  z
   zsh-autosuggestions
   zsh-history-substring-search
   you-should-use
@@ -141,6 +141,7 @@ alias pn="pnpm"
 alias gctony='git config user.email "tonyramirez.business@outlook.com" && git config user.name "croobat"'
 alias gclion='git config user.email "antonio.ramirez@lionintel.com" && git config user.name "Tony Ramírez"'
 alias gcsaeko='git config user.email "tony@saeko.io" && git config user.name "Tony Ramírez"'
+alias gstall='git stash --all --no-include-untracked'
 
 ## Modified
 alias diff='colordiff'
@@ -211,11 +212,13 @@ alias pdf='zathura'
 #New
 alias openports='ss --all --numeric --processes --ipv4 --ipv6'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias youtube-dl-playlist-guardar="yt-dlp -x -f bestaudio --external-downloader aria2c --external-downloader-args '-c -j 3 -x 3 -s 3 -k 1M' --ignore-errors --continue --audio-format mp3 'https://www.youtube.com/playlist?list=PLjp-ryEOLdtOGhSXXc2-3VRoyK8uVUjF2'"
+alias youtube-dl-playlist-guardar="yt-dlp -x -f bestaudio --external-downloader aria2c --external-downloader-args '-c -j 3 -x 3 -s 3 -k 1M' --ignore-errors --continue --audio-format mp3 'https://www.youtube.com/playlist?list=PLx5AzHfyfSFtPdMQc2pI0JisEDvOtAp3i'"
 alias youtube-dl-playlist="yt-dlp -x -f bestaudio --external-downloader aria2c --external-downloader-args '-c -j 3 -x 3 -s 3 -k 1M' --ignore-errors --continue --no-overwrites --audio-format mp3"
 alias android-mount='aft-mtp-mount ~/.mnt'
 alias android-umount='fusermount -uz ~/.mnt'
 alias fix-android-bar='adb shell settings put global force_fsg_nav_bar 1'
+alias git-confirm-install='curl -sSfL https://cdn.rawgit.com/pimterry/git-confirm/v0.2.2/hook.sh > .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit'
+alias git-confirm-add='git config --add hooks.confirm.match'
 
 #Multi
 alias shutgrade="upgrade --combinedupgrade && sudo shutdown now"
@@ -354,11 +357,37 @@ pi() {
 }
 
 webjpeg() {
-  convert "$1" -sampling-factor 4:2:0 -strip -quality 80 -interlace JPEG -colorspace sRGB "$2"
+  if [ "$#" -lt 2 ]; then
+    echo "Usage: webjpeg input_file output_file [resize_option]"
+    return 1
+  fi
+
+  input_file="$1"
+  output_file="$2"
+  resize_option="$3"
+
+  if [ -n "$resize_option" ]; then
+    convert "$input_file" -resize "$resize_option" -sampling-factor 4:2:0 -strip -quality 80 -strip -interlace JPEG -colorspace sRGB "$output_file"
+  else
+    convert "$input_file" -sampling-factor 4:2:0 -strip -quality 80 -interlace JPEG -strip -colorspace sRGB "$output_file"
+  fi
 }
 
 webpng() {
-  convert "$1" -strip "$2"
+  if [ "$#" -lt 2 ]; then
+    echo "Usage: webpng input_file output_file [resize_option]"
+    return 1
+  fi
+
+  input_file="$1"
+  output_file="$2"
+  resize_option="$3"
+
+  if [ -n "$resize_option" ]; then
+    convert "$input_file" -resize "$resize_option" -strip -quality 80 -strip "$output_file"
+  else
+    convert "$input_file" -strip -quality 80 -strip "$output_file"
+  fi
 }
 
 websvg() {

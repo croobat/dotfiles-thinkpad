@@ -69,6 +69,7 @@ map dD trash
 map DD delete
 map yy copy
 map pp paste
+map po paste-override
 
 # Movement
 map gd cd ~/Documents
@@ -128,32 +129,32 @@ map <a-n> newfold
 
 # Edit the current filename
 map A ${{
-	# get 'basename' of the selection
-	filename="${f##*/}"
-	# quote it so we won't deal with quotes in the lf -remote command
-	filename="$(printf '%q' "$filename")"
-	filename="${filename// /<space>}"
-	lf -remote "send $id push :rename<space>$filename"
+    # get 'basename' of the selection
+    filename="${f##*/}"
+    # quote it so we won't deal with quotes in the lf -remote command
+    filename="$(printf '%q' "$filename")"
+    filename="${filename// /<space>}"
+    lf -remote "send $id push :rename<space>$filename"
 }}
 
 # Edit filename before the extension
 map a ${{
-	# get 'basename' of the selection
-	filename="${f##*/}"
-	# quote it so we won't deal with quotes in the lf -remote command
-	filename="$(printf '%q' "$filename")"
-	filename="${filename// /<space>}"
-	lf -remote "send $id push :rename<space>$filename<a-b><c-b>"
+    # get 'basename' of the selection
+    filename="${f##*/}"
+    # quote it so we won't deal with quotes in the lf -remote command
+    filename="$(printf '%q' "$filename")"
+    filename="${filename// /<space>}"
+    lf -remote "send $id push :rename<space>$filename<a-b><c-b>"
 }}
 
 # Edit filename from start
 map I ${{
-	# get 'basename' of the selection
-	filename="${f##*/}"
-	# quote it so we won't deal with quotes in the lf -remote command
-	filename="$(printf '%q' "$filename")"
-	filename="${filename// /<space>}"
-	lf -remote "send $id push :rename<space>$filename<c-a><a-f><c-f>"
+    # get 'basename' of the selection
+    filename="${f##*/}"
+    # quote it so we won't deal with quotes in the lf -remote command
+    filename="$(printf '%q' "$filename")"
+    filename="${filename// /<space>}"
+    lf -remote "send $id push :rename<space>$filename<c-a><a-f><c-f>"
 }}
 
 #  ╭─────────────────╮
@@ -195,15 +196,15 @@ cmd zip ${{
 cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 
 cmd yes_preview &{{
-	lf -remote "send $id map , no_preview"
-	lf -remote "send $id set ratios 2:4:6"
-	lf -remote "send $id set preview"
+    lf -remote "send $id map , no_preview"
+    lf -remote "send $id set ratios 2:4:6"
+    lf -remote "send $id set preview"
 }}
 
 cmd no_preview &{{
-	lf -remote "send $id map , yes_preview"
-	lf -remote "send $id set ratios 2:10"
-	lf -remote "send $id set nopreview"
+    lf -remote "send $id map , yes_preview"
+    lf -remote "send $id set ratios 2:10"
+    lf -remote "send $id set nopreview"
     ~/.config/lf/cleaner
 }}
 
@@ -244,3 +245,23 @@ cmd bulkrename ${{
 }}
 
 cmd open-with %"$@" "$fx"
+
+cmd paste-override &{{
+    set -f
+    load=$(lf -remote "load")
+    mode=$(echo "$load" | head -1)
+    list=$(echo "$load" | sed '1d')
+    set -- _ $list; shift
+    [ $# -gt 0 ] || exit
+    case $mode in
+        copy)
+            rsync -r "$@" ./
+            ;;
+        move)
+            rsync -r --remove-source-files "$@" ./
+            ;;
+    esac
+    lf -remote 'save\nmove\n'
+    lf -remote "send $id load"
+    lf -remote "send $id echo \"\033[0;32mpasted $# file(s)\033[0m\""
+}}
