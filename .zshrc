@@ -43,7 +43,6 @@ zstyle :omz:plugins:ssh-agent identities id_rsa id_ed25519_saeko id_ed25519_lion
 export plugins=(
   adb
   aliases
-  ansible
   archlinux
   autojump
   bun
@@ -68,7 +67,6 @@ export plugins=(
   pj
   react-native
   safe-paste
-  ssh-agent
   sudo
   systemd
   yarn
@@ -122,6 +120,7 @@ alias nethogs='sudo nethogs'
 alias updatedb='sudo updatedb --verbose'
 
 # Pacman
+alias update='sudo pacman -Syu'
 alias pacinn="sudo pacman -S --needed"
 alias yainn="yay -S --needed"
 alias yainch="yay -S --mflags \"--skipchecksums --skippgpcheck\""
@@ -136,8 +135,7 @@ alias gslog="git log --graph --abbrev-commit --decorate --date=relative --format
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias gdd="git difftool"
-alias git-remove-all-branches='git branch | grep -v "master\|main\|develop\|aramirez" | xargs git branch -D'
-alias pn="pnpm"
+alias git-remove-all-branches='git branch | grep -v "master\|production\|main\|develop\|aramirez" | xargs git branch -D'
 alias gctony='git config user.email "tonyramirez.business@outlook.com" && git config user.name "croobat"'
 alias gclion='git config user.email "antonio.ramirez@lionintel.com" && git config user.name "Tony Ramírez"'
 alias gcsaeko='git config user.email "tony@saeko.io" && git config user.name "Tony Ramírez"'
@@ -208,6 +206,35 @@ export LESS_TERMCAP_me=$'\e[0m'
 export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_ue=$'\e[0m'"
 alias pdf='zathura'
+alias pn='pnpm'
+alias pni='pnpm install'
+alias pna='pnpm add'
+alias pnx='pnpm dlx'
+alias pnex='pnpm exec'
+alias pnS='pnpm add --save-prod'
+alias pnD='pnpm add --save-dev'
+alias pnF='pnpm add --force'
+alias pnG='pnpm add --global'
+alias pnrm='pnpm uninstall'
+alias pnE='PATH="$(pnpm bin)":"$PATH"'
+alias pnR='pnpm run'
+alias pnr='pnpm run'
+alias pnrd='pnpm run dev'
+alias pnrt='pnpm run test'
+alias pnrsv='pnpm run serve'
+alias pnrb='pnpm run build'
+alias pnO='pnpm outdated'
+alias pnU='pnpm update'
+alias pnV='pnpm version'
+alias pnL='pnpm list'
+alias pnls='pnpm list'
+alias pnL0='pnpm ls --depth=0'
+alias pnst='pnpm start'
+alias pnt='pnpm test'
+alias pnP='pnpm publish'
+alias pnI='pnpm init'
+alias pnin='pnpm info'
+alias pnSe='pnpm search'
 
 #New
 alias openports='ss --all --numeric --processes --ipv4 --ipv6'
@@ -219,6 +246,7 @@ alias android-umount='fusermount -uz ~/.mnt'
 alias fix-android-bar='adb shell settings put global force_fsg_nav_bar 1'
 alias git-confirm-install='curl -sSfL https://cdn.rawgit.com/pimterry/git-confirm/v0.2.2/hook.sh > .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit'
 alias git-confirm-add='git config --add hooks.confirm.match'
+alias eval-saeko='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519_saeko'
 
 #Multi
 alias shutgrade="upgrade --combinedupgrade && sudo shutdown now"
@@ -254,7 +282,7 @@ alias mimeconf="vim ~/.config/mimeapps.list"
 # cd
 alias ..='cd ..'
 alias setcurrent="/home/tony/.scripts/set-current"
-alias current="cd /home/tony/Development/web-dev/mern/admin-ease"
+alias current="cd /home/tony/Development/web-dev/react/fullstackopen"
 
 alias down="cd ~/Downloads"
 alias docs="cd ~/Documents"
@@ -415,3 +443,11 @@ if [[ -d "/home/tony/intelephense" ]]; then
 fi
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
 
+
+# pnpm
+export PNPM_HOME="/home/tony/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

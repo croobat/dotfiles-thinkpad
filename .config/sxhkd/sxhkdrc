@@ -48,9 +48,9 @@ Print
 super + Print
 	simple-scan
 
-# Htop
+# System monitor
 control + shift + Escape
-	alacritty -e htop
+	gnome-system-monitor
 
 # Web browser
 # super + e
@@ -72,7 +72,7 @@ super + w
 super + b
 	/home/tony/.scripts/bmks
 super + shift + b
-	alacritty --title bmks-links -e nvim /home/tony/.bmks/urls
+	/home/tony/.scripts/bmks gh-repos
 
 # Kill
 super + shift + x

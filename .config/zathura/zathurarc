@@ -75,7 +75,7 @@ set render-loading-bg           "#f8f8f2" # Foreground
 #
 
 set recolor-lightcolor          "#1b1f2b" # Background
-set recolor-darkcolor           "#d0d0d0" # Foreground
+set recolor-darkcolor           "#d7dadc" # Foreground
 
 #
 # Startup options
