@@ -27,7 +27,8 @@ super + c
 	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 # Show emojis
 super + slash
-	rofi -show emoji
+	dmenu-emoji | dmenu -i -l 10 | awk '{print $1}' | tr -d '\n' | xclip -selection clipboard
+	# rofi -show emoji
 # }}}
 
 # Special keys{{{

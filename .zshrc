@@ -209,6 +209,7 @@ alias pdf='zathura'
 alias pn='pnpm'
 alias pni='pnpm install'
 alias pna='pnpm add'
+alias pnag='pnpm add -g'
 alias pnx='pnpm dlx'
 alias pnex='pnpm exec'
 alias pnS='pnpm add --save-prod'
@@ -327,6 +328,7 @@ alias quteconf="cd ~/.config/qutebrowser"
 alias rangerconf="cd ~/.config/ranger"
 alias packerconf="cd ~/.local/share/nvim/site/pack/packer"
 alias nsxivconf="cd ~/.config/nsxiv"
+alias awconf="cd ~/.config/awesome"
 
 ## Media
 #audio
