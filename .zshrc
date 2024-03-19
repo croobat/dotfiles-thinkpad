@@ -44,7 +44,6 @@ export plugins=(
   adb
   aliases
   archlinux
-  autojump
   bun
   colored-man-pages
   common-aliases
@@ -270,7 +269,7 @@ alias php5conf="vim /etc/php56/php.ini"
 alias phpmyadminconf="vim /usr/share/webapps/phpMyAdmin/config.inc.php"
 alias zconf="vim ~/.zshrc"
 alias piconf="vim ~/.config/picom/picom.conf"
-alias alaconf="vim ~/.config/alacritty/alacritty.yml"
+alias alaconf="vim ~/.config/alacritty/alacritty.toml"
 alias bindsconf="vim ~/.config/sxhkd/sxhkdrc"
 alias qutemarks="vim ~/.config/qutebrowser/quickmarks"
 alias qutequick="vim ~/.config/qutebrowser/quickmarks"
@@ -357,6 +356,7 @@ alias parclean='paru -Sc'
 alias parclr='paru -Scc'
 alias parupg='paru -Sua'
 alias parin='paru -S'
+alias parinn='paru -S --needed'
 alias parre='paru -R'
 alias parrem='paru -Rns'
 alias parrep='paru -Si'

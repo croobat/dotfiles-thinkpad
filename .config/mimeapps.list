@@ -52,6 +52,7 @@ application/xhtml+xml=firefox.desktop
 application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
 x-scheme-handler/webcal=google-chrome-unstable.desktop
+application/javascript=nvim.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-531DS1.desktop;userapp-Thunderbird-FQ3MV1.desktop;

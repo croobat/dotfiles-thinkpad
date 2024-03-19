@@ -34,6 +34,11 @@ export LESS_TERMCAP_ue=$'\e[0m'
 # Android-studio
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+# Theme
+export GTK_THEME=Adwaita:dark
+export GTK2_RC_FILES=/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc
+export QT_STYLE_OVERRIDE=Adwaita-Dark
+
 # Source Xresources
 xrdb -merge ~/.Xresources
 
@@ -44,5 +49,6 @@ greenclip daemon &
 udiskie &
 unclutter --timeout 10 &
 playerctld daemon &
+nm-applet &
 
-exec awesome
+# exec awesome
